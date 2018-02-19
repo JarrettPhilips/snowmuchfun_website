@@ -3,7 +3,7 @@
 List of Milestones
 
 | | Milestone                     | Due Date  | Completed |
-| |-------------------------------|-----------|-----------|
+|-|-------------------------------|-----------|-----------|
 |1| Project Proposal              | Feb 18th  |     X     |
 |2| Agile Client Demo + Write Up  | Mar 11th  |           |
 |3| Database Design               | Mar 25th  |           |
