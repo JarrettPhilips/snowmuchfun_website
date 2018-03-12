@@ -17,7 +17,7 @@ CREATE TABLE if not exists users (
    ) 
    CHARACTER SET utf8 COLLATE utf8_general_ci;
 
-INSERT INTO users Values ('TestUser','TestUsersPassword!');
+INSERT INTO users Values ('TestUser','TestUsersPassword!','',1);
 
 
 #Table for map locations
