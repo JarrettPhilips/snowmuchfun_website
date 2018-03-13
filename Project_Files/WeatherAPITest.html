@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+  Dark Skis API
+  Will be used to retrieve information
+
+  This test is more or less Lab 7 restructured a bit
+ -->
+<html>
+  <head>
+    <title>Weather API Test</title>
+    <script src="http://code.jquery.com/jquery-2.2.0.js"></script>
+    <script>
+    $(document).ready(function() {
+      var url =
+      'https://api.forecast.io/forecast/5c1ab2a01cbae1ac1e305d174cafa8ff/40.014984,-105.270546'
+      $.ajax({url:url, dataType:"jsonp"}).then(function(data) {
+      console.log(data)
+      $('#location').text("")
+      $('#location').append(data.longitude, " | ", data.latitude)
+      $('#results').text("")
+      $('#results').append("Temp: ", data.currently.temperature)
+      $('#results').append(" | Humidity: ", data.currently.humidity)
+      $('#results').append(" | Summary: ", data.currently.summary)
+      })
+      })
+    </script>
+  </head>
+  <body>
+    <h3 id="location">GPS Location</h3>
+    <p id="results">Weather Information</p>
+  </body>
+</html>
