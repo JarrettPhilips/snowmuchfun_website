@@ -1,0 +1,9 @@
+Snow Much Fun
+Meeting Notes
+3/19/2018
+
+On Tuesday of last week each team member met with the TA to discuss parts of the project.
+No major changes have been made since the last week.
+The API code was completed by Jarrett and Hunter for both the map and weather.
+They will now begin working on the backend sql part of the project with Robert and Sijan in preperation for Milestone 4.
+Matthew and Colin will continue to work on the front end of the website and incorperate the API code.

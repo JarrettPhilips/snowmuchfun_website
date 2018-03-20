@@ -2,8 +2,15 @@ Snow Much Fun
 Meeting Notes
 3/5/2018
 
-Met to discuss milestone 2 for the group project.  All members of the group were in attendance.  The project requirements were discussed and the project development method.  The requirements for our web app were agreed upon by the team.  The project development tool used will be Trello and account and boards have been created for the project.
+Met to discuss milestone 2 for the group project.  All members of the group were in attendance. 
+The project requirements were discussed and the project development method.  
+The requirements for our web app were agreed upon by the team.  
+The project development tool used will be Trello and account and boards have been created for the project.
 
-The team was split into three groups of two people to start working on the project.  Hunter and Jarrett are going to start on the map reterival and api code.  Robert and Sijan are going to start on the database structure for the user data.  Matthew and Colin are going to start on how to display the map and website layout.
+The team was split into three groups of two people to start working on the project.  
+Hunter and Jarrett are going to start on the map reterival and api code.  
+Robert and Sijan are going to start on the database structure for the user data.  
+Matthew and Colin are going to start on how to display the map and website layout.
 
-The group will discuss on Thursday what progress has been made and redistrute tasks for the next week.  The group also plans to discuss requirements with the TA during lab.
+The group will discuss on Thursday what progress has been made and redistrute tasks for the next week.  
+The group also plans to discuss requirements with the TA during lab.
