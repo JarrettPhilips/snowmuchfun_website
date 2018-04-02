@@ -10,33 +10,60 @@
 
 <!DOCTYPE html>
 <html>
-<head>
-  <link rel="stylesheet" href="style.css">
-  <title>Snow Much Fun!</title>
-</head>
-<!-- Heading -->
-<div>
-  <h1>Snow Much Fun!</h1>
-</div>
- <!-- Side navigation -->
-<div class="sidenav">
-  <a href="./formLogin.html" class="button">Sign in</a>
-  <a href="./formUser.html" class="button">Sign up</a>
-  <form action="/action_page.php" method="get">
-  <input type="checkbox" name="activity" value="Biking" style="color:blue;"> Display Biking<br>
-  <input type="checkbox" name="activity" value="Climbing"> Display Climbing<br>
-  <input type="checkbox" name="activity" value="Hiking"> Display Hiking<br>
-  <input type="checkbox" name="activity" value="Skiing"> Display Skiing<br>
-  </form>
-  <a href="./formActivity.html" class="button">Add Activities</a>
-  <a href="./formWeather.html" class="button">Add Weather Conditions</a>
-</div>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <title>Snow Much Fun!</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
 
-<!-- Page content -->
-<div class="main">
+    <style>
+      #map {
+        height: 100%;
+      }
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
 
-  <p>i like map</p>
 
-</div> 
 
+  <body>
+    <!-- Heading -->
+    <div>
+      <h1>Snow Much Fun!</h1>
+    </div>
+     <!-- Side navigation -->
+    <div class="sidenav">
+      <a href="./formLogin.html" class="button">Sign in</a>
+      <a href="./formUser.html" class="button">Sign up</a>
+      <form action="/action_page.php" method="get">
+      <input type="checkbox" name="activity" value="Biking" style="color:blue;"> Display Biking<br>
+      <input type="checkbox" name="activity" value="Climbing"> Display Climbing<br>
+      <input type="checkbox" name="activity" value="Hiking"> Display Hiking<br>
+      <input type="checkbox" name="activity" value="Skiing"> Display Skiing<br>
+      </form>
+      <a href="./formActivity.html" class="button">Add Activities</a>
+      <a href="./formWeather.html" class="button">Add Weather Conditions</a>
+    </div>
+
+    <!-- Page content -->
+    
+    <div id="map">
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 40.00, lng: -105.00},
+          zoom: 7
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQK0exnojgLgHApfdgjn6Km32cPxIXQZo&callback=initMap" async defer></script>
+    </div>  
+
+
+  </body>
 </html> 
