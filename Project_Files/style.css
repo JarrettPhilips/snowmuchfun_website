@@ -8,6 +8,19 @@
     2018/03/9: Matthew Chamot	Initial creation
     2018/03/12: Colin Chen Added styling */
 
+
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100%;
+    margin: 20;
+    padding: 0;
+}
+
  /* The sidebar menu */
 .sidenav {
     height: 100%; /* Full-height: remove this if you want "auto" height */
@@ -36,6 +49,10 @@
     color: #05b1e9;
 }
 
+#map {
+    height: 100%;
+    margin-left: 200px;
+}
 
 /* Style page content */
 .main {
