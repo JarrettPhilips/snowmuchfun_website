@@ -21,6 +21,20 @@ body {
     padding: 0;
 }
 
+table, th, td, tr {
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+}
+
+#webtitle {
+    width: 400px;
+}
+
+#snowflake {
+    
+}
+
  /* The sidebar menu */
 .sidenav {
     height: 100%; /* Full-height: remove this if you want "auto" height */

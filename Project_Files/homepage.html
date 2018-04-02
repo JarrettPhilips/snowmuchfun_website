@@ -26,9 +26,20 @@
 
   <body>
     <!-- Heading -->
-    <div>
-      <h1>Snow Much Fun!</h1>
-    </div>
+    <table>
+      <tr>
+        <td>
+          <div id="webtitle">
+            <h1>Snow Much Fun!</h1>
+          </div>
+        </td>
+        <td style="text-align: right;">
+          <div id="snowflake">
+            <img src="SnowFlake.jpg" alt="SnowFlake" style="width:5%;height:5%;" >
+          </div>
+        </td> 
+      </tr>
+    </table>
      <!-- Side navigation -->
     <div class="sidenav">
       <a href="./formLogin.html" class="button">Sign in</a>
@@ -44,7 +55,7 @@
     </div>
 
     <!-- Page content -->
-    <div id="map">
+    <div id="map"></div>
     <script>
       var map;
       function initMap() {
@@ -55,7 +66,7 @@
       }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQK0exnojgLgHApfdgjn6Km32cPxIXQZo&callback=initMap" async defer></script>
-    </div>  
+      
 
 
   </body>
