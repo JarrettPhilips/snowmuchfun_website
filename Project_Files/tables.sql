@@ -11,13 +11,13 @@
 CREATE TABLE if not exists users (
    UserName       varchar(40)    unique   NOT NULL,
    Password       varchar(40)    NOT NULL,
-   Submissions    INT            NULL,
-   Logins         INT            NULL,
+   Submissions    INT            NOT NULL,
+   Logins         INT            NOT NULL,
    PRIMARY KEY  (UserName)
    ) 
    CHARACTER SET utf8 COLLATE utf8_general_ci;
 
-INSERT INTO users Values ('TestUser','TestUsersPassword!','',1);
+INSERT INTO users Values ('TestUser','TestUsersPassword!',0,1);
 
 
 #Table for map locations
@@ -50,7 +50,7 @@ CREATE TABLE if not exists reports (
    )
    CHARACTER SET utf8 COLLATE utf8_general_ci;
 
-INSERT INTO locations Values (1, 'TestUser', 'Rocky Mountain National Park', 
+INSERT INTO reports Values (1, 'TestUser', 'Rocky Mountain National Park', 
                               'Hiking', 'Snow packed trail', 'Icy and snow packed road',
                               'Take Bear Lake road to Bear Lake', 
                               'Follow the trail to Emerald Lake from the Bear Lake trailhead.');
