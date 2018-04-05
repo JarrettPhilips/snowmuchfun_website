@@ -1,0 +1,11 @@
+Awardspace.net
+
+
+Account Login:
+Email / Username: jarrettphilips@gmail.com
+Password: allthesnow45
+Client ID: 2685963
+
+FTP:
+Username: 2685963_snowmuchfun
+Password: allthesnow45
