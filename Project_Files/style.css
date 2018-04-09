@@ -27,6 +27,14 @@ table, th, td, tr {
     margin: 0px;
 }
 
+label {
+    color: #d6f8fa;
+    font-size: 20px;
+    font-family: arial;
+}
+input[type=checkbox]:hover {
+    box-shadow:0px 0px 10px #1300ff;
+}
 #webtitle {
     width: 400px;
 }
@@ -38,15 +46,14 @@ table, th, td, tr {
  /* The sidebar menu */
 .sidenav {
     height: 100%; /* Full-height: remove this if you want "auto" height */
-    width: 200px; /* Set the width of the sidebar */
+    width: 208px; /* Set the width of the sidebar */
     position: fixed; /* Fixed Sidebar (stay in place on scroll) */
     z-index: 1; /* Stay on top */
     /*top: 0; /* Stay at the top */
     left: 0;
-    background-color: #d6f8fa; /* Black */
+    background-color: #6d6b9e; /*Dark Blue*/ 
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 20px;
-    border: 5px inset #0f05e9;
 }
 
 /* The navigation menu links */
@@ -54,13 +61,13 @@ table, th, td, tr {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
     font-size: 25px;
-    color: #049ed0;
+    color: #d6f8fa;/* light blue #d6f8fa*/
     display: block;
 }
 
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
-    color: #05b1e9;
+    color: #a9b6f3;
 }
 
 #map {
@@ -81,7 +88,7 @@ table, th, td, tr {
 }
 
 .button {
-    background-color: #a9b6f3; /* Blue */
+    background-color: #817ecd; /* Blue #05b1e9*/
     border: none;
     color: white;
     padding: 15px 32px;
@@ -89,4 +96,5 @@ table, th, td, tr {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    font-family: arial;
 }
