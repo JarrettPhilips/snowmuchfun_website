@@ -1,0 +1,9 @@
+Snow Much Fun
+Meeting Notes
+4/2/2018
+
+Met to discuss progress on the project after spring break.  More focus on the database side for Milestone 4.
+Hunter, Jarrett, Sijan and Robert are working on sample database scripts.
+Matthew and Colin will continue to work on layout for the front end and incorperate the map and weather.
+
+
