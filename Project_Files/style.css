@@ -98,3 +98,21 @@ input[type=checkbox]:hover {
     font-size: 16px;
     font-family: arial;
 }
+
+.btn-success {
+    color: #d6f8fa;
+    background-color: #6d6b9e;
+    border-width: 2px;
+    border-color: #6d6b9e;
+    margin-right: 5px;
+}
+
+.btn-success:hover {
+    background-color: #a9b6f3;
+    color: white;
+    border-color: #a9b6f3;
+}
+
+#index, #weather, #activity {
+    background-color: #b5d3e7;
+}
