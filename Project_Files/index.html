@@ -59,9 +59,14 @@
     <script>
       var map;
       function initMap() {
+        var gps = {lat: 38.75, lng: -104.92};
         map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 38.75, lng: -104.92},
+          center: gps,
           zoom: 7
+        });
+        var marker = new google.maps.Marker({
+          position: gps,
+          map: map
         });
       }
     </script>
