@@ -39,7 +39,7 @@
             var marker = new google.maps.Marker({
               map: map,
               position: place.geometry.location,
-              icon: "bicycle.png" 
+              icon: "Images/climb.png" 
             });
             google.maps.event.addListener(marker, 'click', function() {
               infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
@@ -82,7 +82,7 @@
         </td>
         <td style="text-align: right;">
           <div id="snowflake">
-            <img src="SnowFlake.jpg" alt="SnowFlake" style="width:5%;height:5%;" >
+            <img src="Images/SnowFlake.jpg" alt="SnowFlake" style="width:5%;height:5%;" >
           </div>
         </td>
 
@@ -114,6 +114,8 @@
       <a href="./formUser.html" class="button">Sign up</a>
       <a href="./formActivity.html" class="button">Add Activities</a>
       <a href="./formWeather.html" class="button">Add Weather Conditions</a>
+      <a href="./AboutUs.html" class="button">About</a>
+      
       <form action="/action_page.php" method="get">
       <input type="checkbox" name="activity" value="Biking"/><label for="Biking"> Display Biking</label><br>
       <input type="checkbox" name="activity" value="Climbing"/><label for="Climbing"> Display Climbing</label><br>
@@ -125,7 +127,7 @@
     <!-- Page content -->
     <div id="map"></div>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQK0exnojgLgHApfdgjn6Km32cPxIXQZo&libraries=places&callback=initMap"></script>
-    <div>Icons made by <a href="https://www.flaticon.com/authors/nikita-golubev" title="Nikita Golubev">Nikita Golubev</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+
 
   </body>
 </html>
