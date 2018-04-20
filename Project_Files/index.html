@@ -66,6 +66,23 @@
         });
       }
     </script>
+    <script src="http://code.jquery.com/jquery-2.2.0.js"></script>
+  <script>
+    $(document).ready(function() {
+    var url =
+    'https://api.forecast.io/forecast/5d43c2767b350cf93ce481a6b64b630b/40.014984,-105.270546'
+    $.ajax({url:url, dataType:"jsonp"}).then(function(data) {
+    console.log(data)
+    $('#results_S').text("Summary: ")
+    $('#results_S').append(data.currently.summary)
+    $('#results_T').text("Temperature: ")
+    $('#results_T').append(data.currently.temperature)
+    $('#results_T').append(" \xb0F")
+    $('#results_H').text("Humidity: ")
+    $('#results_H').append(data.currently.humidity*100)
+    $('#results_H').append(" %")})
+    })
+  </script>
   </head>
 
 
@@ -87,6 +104,7 @@
 
       </tr>
     </table>
+    
      <!-- Side navigation -->
      <div class="sidenav">
        <form>
@@ -98,15 +116,8 @@
 		<input type="password" placeholder="Enter Password" name="psw" required>
 
 		<button type="submit">Login</button>
-		<!--
-		<label>
-	  		<input type="checkbox" checked="checked" name="remember"> Remember me
-		</label>
-		-->
 	</div>
-	<div class="container">
-	  <span class="psw"> <a href="#" style="font-size:14px" >Forgot password?</a></span>
-	</div>
+	<br>
 </form>
       <a href="./formUser.html" class="button">Sign up</a>
       <a href="./formActivity.html" class="button">Add Activities</a>
@@ -119,6 +130,10 @@
       <input type="checkbox" name="activity" value="Hiking"/><label for="Hiking"> Display Hiking</label><br>
       <input type="checkbox" name="activity" value="Skiing"/><label for="Skiing"> Display Skiing</label><br>
       </form>
+      <p>Current Weather in Boulder, CO</p>
+  <p id="results_S">original</p>
+  <p id="results_T">original</p>
+  <p id="results_H">original</p>
     </div>
 
     <!-- Page content -->
