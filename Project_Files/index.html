@@ -42,9 +42,8 @@
               icon: "Images/climb.png" 
             });
             google.maps.event.addListener(marker, 'click', function() {
-              infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
-                'Place ID: ' + place.place_id + '<br>' +
-                place.formatted_address + '</div>');
+              infowindow.setContent('<div><strong>' + 'Aspen' + '</strong><br>' +
+                'Temp: ' + '38' + '<br>' + 'Humidity: 65%' + '<br>' + 'Overview: Clear' + '</div>');
               infowindow.open(map, this);
             });
           }
