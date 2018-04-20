@@ -84,11 +84,32 @@
           <div id="snowflake">
             <img src="SnowFlake.jpg" alt="SnowFlake" style="width:5%;height:5%;" >
           </div>
-        </td> 
+        </td>
+
       </tr>
     </table>
      <!-- Side navigation -->
-    <div class="sidenav">
+     <div class="sidenav">
+       <form>
+	<div class="container">
+		<label for="uname"><b>Username</b></label>
+		<input type="text" placeholder="Enter Username" name="uname" required>
+
+		<label for="psw"><b>Password</b></label>
+		<input type="password" placeholder="Enter Password" name="psw" required>
+
+		<button type="submit">Login</button>
+		<!--
+		<label>
+	  		<input type="checkbox" checked="checked" name="remember"> Remember me
+		</label>
+		-->
+	</div>
+	<br>
+	<div class="container">
+	  <span class="psw"> <a href="#">Forgot password?</a></span>
+	</div>
+</form>
       <a href="./formLogin.html" class="button">Sign in</a>
       <a href="./formUser.html" class="button">Sign up</a>
       <a href="./formActivity.html" class="button">Add Activities</a>
