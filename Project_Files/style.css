@@ -85,14 +85,57 @@ input[type="submit"]{
     color: #a9b6f3;
 }
 
+
+ /* The sidebar menu */
+.sidenav_right {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 268px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    /*top: 0; /* Stay at the top */
+    right: 0;
+    background-color: #6d6b9e; /*Dark Blue*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    overflow-y: auto;
+    padding-top: 20px;
+}
+
+/* The navigation menu links */
+.sidenav_right a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #d6f8fa;/* light blue #d6f8fa*/
+    display: block;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav_right a:hover {
+    color: #a9b6f3;
+}
+
+ /* The comments section menu */
+.comments {
+    width: 248px; /* Set the width of the sidebar */
+    position: static; /* goes up and down with scroll */
+    right: .1;
+    background-color: #adaaf5; /*Dark Blue*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    overflow-y: auto;
+    padding-top: 2px;
+}
+
+
 #map {
     height: 100%;
     margin-left: 200px;
+    margin-right: 260px;
 }
 
 /* Style page content */
 .main {
-    margin-left: 200px; /* Same as the width of the sidebar */
+    margin-left: 200px; /* Same as the width of the left sidebar */
+    margin-right: 260px; /* same as right sidebar width */
     padding: 0px 10px;
 }
 
