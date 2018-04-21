@@ -18,52 +18,8 @@
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
 
-    <script>
-      function initMap() {
-        var gps = {lat: 38.75, lng: -104.92};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          center: gps,
-          zoom: 7
-        });
-
-
-        var infowindow = new google.maps.InfoWindow();
-        var service = new google.maps.places.PlacesService(map);
-
-        service.getDetails({
-          placeId: 'ChIJfTxB93w5QIcRcvYseNxCK8E'
-        }, function(place, status) {
-          if (status === google.maps.places.PlacesServiceStatus.OK) {
-            var marker = new google.maps.Marker({
-              map: map,
-              position: place.geometry.location,
-              icon: "Images/climb.png"
-            });
-            google.maps.event.addListener(marker, 'click', function() {
-              infowindow.setContent('<div><strong>' + 'Aspen' + '</strong><br>' +
-                'Temp: ' + '38' + '<br>' + 'Humidity: 65%' + '<br>' + 'Overview: Clear' + '</div>');
-              infowindow.open(map, this);
-            });
-          }
-        });
-        service.getDetails({
-          placeId: 'ChIJ06-NJ06Na4cRWIAboHw7Ocg'
-        }, function(place, status) {
-          if (status === google.maps.places.PlacesServiceStatus.OK) {
-            var marker = new google.maps.Marker({
-              map: map,
-              position: place.geometry.location
-            });
-            google.maps.event.addListener(marker, 'click', function() {
-              infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
-                'Place ID: ' + place.place_id + '<br>' +
-                place.formatted_address + '</div>');
-              infowindow.open(map, this);
-            });
-          }
-        });
-      }
-    </script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js'></script>
+<script type='text/javascript' src='app.js'></script>
   </head>
 
   <body id="index">
@@ -124,6 +80,7 @@
       <a href="./AboutUs.html" class="button">About</a>
 
       <form action="/action_page.php" method="get">
+      <input type='checkbox' data-bind='checked: Locations' value='Climbing'><label for="Climbing"> Display Climbing</label><br>
       <input type="checkbox" name="activity" value="Biking"/><label for="Biking"> Display Biking</label><br>
       <input type="checkbox" name="activity" value="Climbing"/><label for="Climbing"> Display Climbing</label><br>
       <input type="checkbox" name="activity" value="Hiking"/><label for="Hiking"> Display Hiking</label><br>
@@ -134,7 +91,5 @@
     <!-- Page content -->
     <div id="map"></div>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQK0exnojgLgHApfdgjn6Km32cPxIXQZo&libraries=places&callback=initMap"></script>
-
-
   </body>
 </html>
