@@ -1,7 +1,7 @@
 #!/bin/sh
 # Remember to change permissions so this can be run
-#sudo apt-get update
-#sudo apt-get install php libapache2-mod-php php-mcrypt php-mysql
+sudo apt-get update
+sudo apt-get install php libapache2-mod-php php-mcrypt php-mysql
 sudo cp phpConfig.conf /etc/apache2/mods-enabled/dir.conf
 sudo systemctl restart apache2
 sudo systemctl status apache2
