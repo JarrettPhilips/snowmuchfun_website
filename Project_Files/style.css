@@ -2,7 +2,7 @@
    style.css
 
   PURPOSE:
-    Define styling for main map webpage 
+    Define styling for main map webpage
 
   MODIFICATION HISTORY:
     2018/03/9: Matthew Chamot	Initial creation
@@ -55,7 +55,7 @@ input[type="submit"]{
 }
 
 #snowflake {
-    
+
 }
 
  /* The sidebar menu */
@@ -66,7 +66,7 @@ input[type="submit"]{
     z-index: 1; /* Stay on top */
     /*top: 0; /* Stay at the top */
     left: 0;
-    background-color: #6d6b9e; /*Dark Blue*/ 
+    background-color: #6d6b9e; /*Dark Blue*/
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 20px;
 }
@@ -128,7 +128,17 @@ input[type="submit"]{
     border-color: #a9b6f3;
 }
 
+.error {
+  width: 92%;
+  margin: 0px auto;
+  padding: 10px;
+  border: 1px solid #a94442;
+  color: #a94442;
+  background: #f2dede;
+  border-radius: 5px;
+  text-align: left;
+}
+
 #index, #weather, #activity {
     background-color: #b5d3e7;
 }
-
