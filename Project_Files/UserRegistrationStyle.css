@@ -26,6 +26,7 @@ form, .content {
   background: #dcdde1;
   border-radius: 0px 0px 10px 10px;
 }
+
 .input-group {
   margin: 10px 0px 10px 0px;
 }
@@ -38,6 +39,7 @@ form, .content {
   font-size: 16px;
   border: 0px solid gray;
 }
+
 .btn {
   padding: 10px;
   font-size: 15px;
@@ -46,6 +48,7 @@ form, .content {
   border: none;
   border-radius: 5px;
 }
+
 .error {
   width: 92%;
   margin: 0px auto;
@@ -56,6 +59,7 @@ form, .content {
   border-radius: 5px;
   text-align: left;
 }
+
 .success {
   color: #3c763d;
   background: #dff0d8;
