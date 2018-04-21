@@ -1,47 +1,153 @@
+var map;
+var marker_bike = [];
+var marker_climb = [];
+var marker_hike = [];
+var marker_ski = [];
+var climb_place = ['EiRTaGVsZiBSZCwgQ2HDsW9uIENpdHksIENPIDgxMjEyLCBVU0E','ChIJSY4n20iTa4cR3o27gOAV59k'];
+var bike_place = ['ChIJVW4bySWla4cRaD9fkeKanvs','ChIJvV4onwjua4cRHSZ-bMRpYPw'];
+var hike_place = ['ChIJs67WrVNXE4cRZi0KU4Dnfc0'];
+var ski_place = ['ChIJjxt7zM1HQIcRYFVYkLuaAco'];
 
 function initMap() {
     var gps = {lat: 38.75, lng: -104.92};
-    var map = new google.maps.Map(document.getElementById('map'), {
+    map = new google.maps.Map(document.getElementById('map'), {
         center: gps,
         zoom: 7
     });
 
     var infowindow = new google.maps.InfoWindow();
     var service = new google.maps.places.PlacesService(map);
-
-    service.getDetails({
-        placeId: 'ChIJfTxB93w5QIcRcvYseNxCK8E'
-    }, function(place, status) {
-        if (status === google.maps.places.PlacesServiceStatus.OK) {
-            var marker = new google.maps.Marker({
-		map: map,
-		position: place.geometry.location,
-		icon: "Images/climb.png"
-            });
-            google.maps.event.addListener(marker, 'click', function() {
-		infowindow.setContent('<div><strong>' + 'Aspen' + '</strong><br>' +
-				      'Temp: ' + '38' + '<br>' + 'Humidity: 65%' + '<br>' + 'Overview: Clear' + '</div>');
-		infowindow.open(map, this);
-            });
-        }
-    });
-    service.getDetails({
-        placeId: 'ChIJ06-NJ06Na4cRWIAboHw7Ocg'
-    }, function(place, status) {
-        if (status === google.maps.places.PlacesServiceStatus.OK) {
-            var marker = new google.maps.Marker({
-		map: map,
-		position: place.geometry.location
-            });
-            google.maps.event.addListener(marker, 'click', function() {
-		infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
-				      'Place ID: ' + place.place_id + '<br>' +
-				      place.formatted_address + '</div>');
-		infowindow.open(map, this);
-            });
-        }
-    });
+    // Climbing icons
+    for (var i=0; i<climb_place.length; i++) {
+	service.getDetails({
+            placeId: climb_place[i]
+	}, function(place, status) {
+            if (status === google.maps.places.PlacesServiceStatus.OK) {
+		var marker = new google.maps.Marker({
+		    map: map,
+		    position: place.geometry.location,
+		    icon: "Images/climb.png"
+		});
+		marker_climb.push(marker);
+		google.maps.event.addListener(marker, 'click', function() {
+		    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
+					  'Temp: ' + '38' + '<br>' + 'Humidity: 65%' + '<br>' + 'Overview: Clear' + '</div>');
+		    infowindow.open(map, this);
+		});
+            }
+	});
+    }
+    // biking icons
+    for (var i=0; i<bike_place.length; i++) {
+	service.getDetails({
+            placeId: bike_place[i]
+	}, function(place, status) {
+            if (status === google.maps.places.PlacesServiceStatus.OK) {
+		var marker = new google.maps.Marker({
+		    map: map,
+		    position: place.geometry.location,
+		    icon: "Images/cycling.png"
+		});
+		marker_bike.push(marker);
+		google.maps.event.addListener(marker, 'click', function() {
+		    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
+					  'Temp: ' + '38' + '<br>' + 'Humidity: 65%' + '<br>' + 'Overview: Clear' + '</div>');
+		    infowindow.open(map, this);
+		});
+            }
+	});
+    }
+    // skiing icons
+    for (var i=0; i<ski_place.length; i++) {
+	service.getDetails({
+            placeId: ski_place[i]
+	}, function(place, status) {
+            if (status === google.maps.places.PlacesServiceStatus.OK) {
+		var marker = new google.maps.Marker({
+		    map: map,
+		    position: place.geometry.location,
+		    icon: "Images/skiing.png"
+		});
+		marker_ski.push(marker);
+		google.maps.event.addListener(marker, 'click', function() {
+		    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
+					  'Temp: ' + '38' + '<br>' + 'Humidity: 65%' + '<br>' + 'Overview: Clear' + '</div>');
+		    infowindow.open(map, this);
+		});
+            }
+	});
+    }
+    // hiking icons
+    for (var i=0; i<hike_place.length; i++) {
+	service.getDetails({
+            placeId: hike_place[i]
+	}, function(place, status) {
+            if (status === google.maps.places.PlacesServiceStatus.OK) {
+		var marker = new google.maps.Marker({
+		    map: map,
+		    position: place.geometry.location,
+		    icon: "Images/hiking.png"
+		});
+		marker_hike.push(marker);
+		google.maps.event.addListener(marker, 'click', function() {
+		    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
+					  'Temp: ' + '38' + '<br>' + 'Humidity: 65%' + '<br>' + 'Overview: Clear' + '</div>');
+		    infowindow.open(map, this);
+		});
+            }
+	});
+    }
 }
-// Activates knockout.js
-ko.applyBindings(viewModel);
-initMap();
+
+function checkBike(){
+    var checkbox = document.getElementById('Biking');
+    if (checkbox.checked == true){
+	for (var i=0; i<marker_bike.length; i++) {
+	    marker_bike[i].setVisible(true);
+	}
+        
+    } else {
+	for (var i=0; i<marker_bike.length; i++) {
+	    marker_bike[i].setVisible(false);
+	}
+    }
+}
+function checkClimb(){
+    var checkbox = document.getElementById('Climbing');
+    if (checkbox.checked == true){
+	for (var i=0; i<marker_climb.length; i++) {
+	    marker_climb[i].setVisible(true);
+	}
+        
+    } else {
+	for (var i=0; i<marker_climb.length; i++) {
+	    marker_climb[i].setVisible(false);
+	}
+    }
+}
+function checkSki(){
+    var checkbox = document.getElementById('Skiing');
+    if (checkbox.checked == true){
+	for (var i=0; i<marker_ski.length; i++) {
+	    marker_ski[i].setVisible(true);
+	}
+        
+    } else {
+	for (var i=0; i<marker_ski.length; i++) {
+	    marker_ski[i].setVisible(false);
+	}
+    }
+}
+function checkHike(){
+    var checkbox = document.getElementById('Hiking');
+    if (checkbox.checked == true){
+	for (var i=0; i<marker_hike.length; i++) {
+	    marker_hike[i].setVisible(true);
+	}
+        
+    } else {
+	for (var i=0; i<marker_hike.length; i++) {
+	    marker_hike[i].setVisible(false);
+	}
+    }
+}

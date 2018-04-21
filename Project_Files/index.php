@@ -79,13 +79,12 @@
       <a href="./formWeather.html" class="button">Add Weather Conditions</a>
       <a href="./AboutUs.html" class="button">About</a>
 
-      <form action="/action_page.php" method="get">
-      <input type='checkbox' data-bind='checked: Locations' value='Climbing'><label for="Climbing"> Display Climbing</label><br>
-      <input type="checkbox" name="activity" value="Biking"/><label for="Biking"> Display Biking</label><br>
-      <input type="checkbox" name="activity" value="Climbing"/><label for="Climbing"> Display Climbing</label><br>
-      <input type="checkbox" name="activity" value="Hiking"/><label for="Hiking"> Display Hiking</label><br>
-      <input type="checkbox" name="activity" value="Skiing"/><label for="Skiing"> Display Skiing</label><br>
-      </form>
+      <div id="activities"> 
+      <input type="checkbox" name="Biking" value="Biking" onclick="checkBike()" id="Biking"checked/><label for="Biking"> Display Biking</label><br>
+      <input type="checkbox" name="Climbing" value="Climbing" onclick="checkClimb()" id="Climbing"checked/><label for="Climbing"> Display Climbing</label><br>
+      <input type="checkbox" name="Hiking" value="Hiking" onclick="checkHike()" id="Hiking"checked/><label for="Hiking"> Display Hiking</label><br>
+      <input type="checkbox" name="Skiing" value="Skiing" onclick="checkSki()" id="Skiing"checked/><label for="Skiing"> Display Skiing</label><br>
+      </div>
     </div>
 
     <!-- Page content -->
