@@ -97,7 +97,8 @@ function initMap() {
 		marker_hike.push(marker);
 		google.maps.event.addListener(marker, 'click', function() {
 			document.getElementById('location_name').innerHTML = place.name;
-			document.getElementById('side_icon').src = "Images/hiking.png";			
+			document.getElementById('side_icon').src = "Images/hiking.png";
+			showWeather(40, -105);			
 		    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
 					  'Temp: ' + '38' + '<br>' + 'Humidity: 65%' + '<br>' + 'Overview: Clear' + '</div>');
 		    infowindow.open(map, this);
@@ -159,3 +160,28 @@ function checkHike(){
 	}
     }
 }
+
+
+var getWeather = function(lat, long) {
+        //var lat = 40
+        //var long = -105
+        showWeather(lat, long)
+  }
+ 
+  function showWeather(lat, long) {
+    var url = `https://api.darksky.net/forecast/5d43c2767b350cf93ce481a6b64b630b/${lat},${long}` + `?format=jsonp&callback=displayWeather`;
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = url;
+    document.getElementsByTagName("head")[0].appendChild(script);
+    displayWeather(object)   
+  }
+
+var object;
+
+ function displayWeather(object) {
+ 	document.getElementById('results_S').innerHTML = object.currently.summary;
+ 	document.getElementById('results_H').innerHTML = object.currently.humidity*100 + " %";
+ 	document.getElementById('results_T').innerHTML = object.currently.temperature + " \xb0F";
+    console.log(object);
+ }

@@ -87,10 +87,9 @@
 <body>
     <h2 id="location_name" align="center"><b>LOCATION NAME</b><br> </h2>
     <div><h2><img id="side_icon" src="Images/climb.png" alt="climb icon"></h2></div>
-    <p>Current Weather</p>
-    <p id="results_T">original</p>
-    <p id="results_H">original</p>
-    <p id="results_S">original</p>
+    <p id="results_S" align="center">Summary</p>
+    <p id="results_H" align="center">Humidity</p>
+    <p id="results_T" align="center">Temperature</p>
 
       <form style="margin-left: 20px">
 
