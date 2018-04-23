@@ -20,6 +20,7 @@
 
 <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js'></script>
 <script type='text/javascript' src='app.js'></script>
+
   </head>
 
   <body id="index">
@@ -84,10 +85,13 @@
 <div class="sidenav_right">
 
 <body>
-    <h2 align="center"><b>LOCATION NAME</b><br>
-    <img src="Images/climb.png" alt="climb icon" style="width:20%;height:20%;" >
-    </h2>
-    
+    <h2 id="location_name" align="center"><b>LOCATION NAME</b><br> </h2>
+    <div><h2><img id="side_icon" src="Images/climb.png" alt="climb icon"></h2></div>
+    <p>Current Weather</p>
+    <p id="results_T">original</p>
+    <p id="results_H">original</p>
+    <p id="results_S">original</p>
+
       <form style="margin-left: 20px">
 
         <div style="font-size:0;height:10px;margin-top:0px;padding: 0px"></div>

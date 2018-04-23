@@ -30,6 +30,8 @@ function initMap() {
 		});
 		marker_climb.push(marker);
 		google.maps.event.addListener(marker, 'click', function() {
+			document.getElementById('location_name').innerHTML = place.name;
+			document.getElementById('side_icon').src = "Images/climb.png";
 		    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
 					  'Temp: ' + '38' + '<br>' + 'Humidity: 65%' + '<br>' + 'Overview: Clear' + '</div>');
 		    infowindow.open(map, this);
@@ -50,6 +52,8 @@ function initMap() {
 		});
 		marker_bike.push(marker);
 		google.maps.event.addListener(marker, 'click', function() {
+			document.getElementById('location_name').innerHTML = place.name;
+			document.getElementById('side_icon').src = "Images/cycling.png";
 		    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
 					  'Temp: ' + '38' + '<br>' + 'Humidity: 65%' + '<br>' + 'Overview: Clear' + '</div>');
 		    infowindow.open(map, this);
@@ -70,6 +74,8 @@ function initMap() {
 		});
 		marker_ski.push(marker);
 		google.maps.event.addListener(marker, 'click', function() {
+			document.getElementById('location_name').innerHTML = place.name;
+			document.getElementById('side_icon').src = "Images/skiing.png";
 		    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
 					  'Temp: ' + '38' + '<br>' + 'Humidity: 65%' + '<br>' + 'Overview: Clear' + '</div>');
 		    infowindow.open(map, this);
@@ -90,6 +96,8 @@ function initMap() {
 		});
 		marker_hike.push(marker);
 		google.maps.event.addListener(marker, 'click', function() {
+			document.getElementById('location_name').innerHTML = place.name;
+			document.getElementById('side_icon').src = "Images/hiking.png";			
 		    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
 					  'Temp: ' + '38' + '<br>' + 'Humidity: 65%' + '<br>' + 'Overview: Clear' + '</div>');
 		    infowindow.open(map, this);
