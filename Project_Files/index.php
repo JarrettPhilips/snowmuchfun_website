@@ -88,14 +88,12 @@
     <h2 id="location_name" align="center"><b>LOCATION NAME</b><br> </h2>
     <div><h2><img id="side_icon" src="Images/climb.png" alt="climb icon"></h2></div>
     <p id="results_S" align="center">Summary</p>
-    <p id="results_H" align="center">Humidity</p>
     <p id="results_T" align="center">Temperature</p>
+    <p id="results_H" align="center">Humidity</p>
 
       <form style="margin-left: 20px">
 
-        <div style="font-size:0;height:10px;margin-top:0px;padding: 0px"></div>
 
-        <div style="font-size:0;height:0px;margin-top:0px;padding: 0px"></div>
         <p style="margin-bottom: 0px"><b>Road Conditions</b></p>
         <div class="form-group" style="width: 75%">
           <input type="text" class="form-control" id="Road Conditions" placeholder="Describe road conditions to activity">
