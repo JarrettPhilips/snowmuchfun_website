@@ -14,7 +14,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="style.css">
-    <title>Snow Much Fun!</title>
+    <title>Snow much fun!</title>
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
 
@@ -69,16 +69,13 @@
     <?php endif ?>
   </div>
 </form>
-      <a href="./formActivity.html" class="button">Add Activities</a>
-      <a href="./formWeather.html" class="button">Add Weather Conditions</a>
-      <a href="./AboutUs.html" class="button">About</a>
-
       <div id="activities"> 
       <input type="checkbox" name="Biking" value="Biking" onclick="checkBike()" id="Biking"checked/><label for="Biking"> Display Biking</label><br>
       <input type="checkbox" name="Climbing" value="Climbing" onclick="checkClimb()" id="Climbing"checked/><label for="Climbing"> Display Climbing</label><br>
       <input type="checkbox" name="Hiking" value="Hiking" onclick="checkHike()" id="Hiking"checked/><label for="Hiking"> Display Hiking</label><br>
-      <input type="checkbox" name="Skiing" value="Skiing" onclick="checkSki()" id="Skiing"checked/><label for="Skiing"> Display Skiing</label><br>
+      <input type="checkbox" name="Skiing" value="Skiing" onclick="checkSki()" id="Skiing"checked/><label for="Skiing"> Display Skiing</label><br><br>
       </div>
+      <a href="./AboutUs.html" class="button">About</a>
     </div>
     
 <!--Right sidebar -->
@@ -92,31 +89,11 @@
     <p id="results_H" align="center">Humidity</p>
 
       <form style="margin-left: 20px">
-
-
-        <p style="margin-bottom: 0px"><b>Road Conditions</b></p>
-        <div class="form-group" style="width: 75%">
-          <input type="text" class="form-control" id="Road Conditions" placeholder="Describe road conditions to activity">
-        </div>
-      
-        <div style="font-size:0;height:10px;margin-top:0px;padding: 0px"></div>
-        <p style="margin-bottom: 0px"><b>Location Description</b></p>
-        <textarea class="form-control" id="LocationDescription" style="resize: vertical; max-width: 75%" rows="3"></textarea>
-        <div style="font-size:0;height:10px;margin-top:0px;padding: 0px"></div>
-
-        <div style="font-size:0;height:10px;margin-top:0px;padding: 0px"></div>
-        <p style="margin-bottom: 0px"><b>Activity Description</b></p>
-        <textarea class="form-control" id="ActivityDescription" style="resize: vertical; max-width: 75%" rows="3"></textarea>
-        <div style="font-size:0;height:10px;margin-top:0px;padding: 0px"></div>
-
-        <div class="form-inline">
-          <button type="submit" class="btn btn-success mb-2">Submit</button>
-        </div>
-      </form>
 <h3 align="center"><u>Comments</u></h3>
 <div class="comments">
 SomeUser-
 <p>
+Hello
 All of his comments. <br>
 saying some random shit
 </p>
