@@ -87,6 +87,7 @@
     <p id="results_S" align="center">Summary</p>
     <p id="results_T" align="center">Temperature</p>
     <p id="results_H" align="center">Humidity</p>
+    <div><h2><img id="side_weather" src="Images/clear-day.png" alt="weather icon"></h2></div>
 
       <form style="margin-left: 20px">
 <h3 align="center"><u>Comments</u></h3>

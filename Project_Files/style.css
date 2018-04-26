@@ -186,7 +186,7 @@ input[type="submit"]{
     background-color: #b5d3e7;
 }
 
-#side_icon {
+#side_icon, #side_weather {
     width:20%;height:20%; 
     display: block;
     margin-left: auto; 
