@@ -28,7 +28,7 @@
   	</div>
   	<div class="input-group">
   	  <button type="submit" class="btn" name="registerUser">Submit</button>
-      <button type="submit" class="btn" name="registerUser"><a href="index.php" class="btn" style="text-decoration:none; padding:0px;">Back</a></button>
+      <button class="btn" name="registerUser"><a href="index.php" class="btn" style="text-decoration:none; padding:0px;">Back</a></button>
   	</div>
   </form>
 </body>
