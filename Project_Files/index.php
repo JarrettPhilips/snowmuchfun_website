@@ -27,7 +27,7 @@
     <table>
       <tr>
         <td>
-          <h1 align="Center" style="font-family:Algerian; color:white;"> Snow Much Fun!
+          <h1 align="Center" style="font-family:Algerian; color:white;"> <marquee direction="right">Snow Much Fun!</marquee>
             <img align="right" src="Images/SnowFlake.jpg" alt="SnowFlake" style="width:4%;height:4%;" >
           </h1>
         </td>
@@ -42,6 +42,7 @@
 
 
         <!-- Login Form -->
+        <p style="font-size:18px; text-align:center"><b>Sign In</b></p>
         <form method="post" action="index.php">
           <?php include('UserRegistrationError.php'); ?>
           <?php include('UserDatabaseBackend.php'); ?>
@@ -54,8 +55,9 @@
           <div class="input-group">
             <button type="submit" class="btn btn-success mb-2" name="loginUser">Login</button>
           </div>
-            <p style="font-size:14px, text-align:center">
-              No account?<a href="UserRegistrationFrontend.php" style="font-size:18px">Sign up Here</a>
+            <p style="font-size:14px; text-align:center">
+              No account?<br>
+              <a href="UserRegistrationFrontend.php" style="font-size:18px">Sign up Here</a>
             </p>
           </div>
           <div class="content">
