@@ -1,5 +1,6 @@
 <?php
   $db = mysqli_connect('localhost','2685963_snowmuchfun','allthesnow45','2685963_snowmuchfun')
+  echo 'Connected Successfuly';
   or die('Error connecting to MySQL server.');
 ?>
 

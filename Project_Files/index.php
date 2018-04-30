@@ -19,7 +19,6 @@
 
     <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js'></script>
     <script type='text/javascript' src='app.js'></script>
-
   </head>
 
   <body id="index">
@@ -28,7 +27,7 @@
     <table>
       <tr>
         <td>
-          <h1> Snow Much Fun!
+          <h1 align="Center" style="font-family:Algerian; color:white;"> Snow Much Fun!
             <img align="right" src="Images/SnowFlake.jpg" alt="SnowFlake" style="width:4%;height:4%;" >
           </h1>
         </td>
@@ -102,6 +101,8 @@
         <p id="results_T" align="center">Temperature</p>
         <p id="results_H" align="center">Humidity</p>
         <div><h2><img id="side_weather" src="Images/clear-day.png" alt="weather icon"></h2></div>
+        
+        
 
       <!-- Comments for each location -->
       <h3 align="center"><u>Comments</u></h3>
