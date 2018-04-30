@@ -22,7 +22,7 @@
   </head>
 
   <body id="index">
-    
+
     <!-- Title Bar -->
     <table>
       <tr>
@@ -34,7 +34,7 @@
 
       </tr>
     </table>
-     
+
 
     <!-- Left Side navigation -->
     <div class="sidenav">
@@ -80,7 +80,7 @@
         </form>
 
         <!-- CheckBoxes for activity selection -->
-        <div id="activities"> 
+        <div id="activities">
           <input type="checkbox" name="Biking" value="Biking" onclick="checkBike()" id="Biking"checked/><label for="Biking"> Display Biking</label><br>
           <input type="checkbox" name="Climbing" value="Climbing" onclick="checkClimb()" id="Climbing"checked/><label for="Climbing"> Display Climbing</label><br>
           <input type="checkbox" name="Hiking" value="Hiking" onclick="checkHike()" id="Hiking"checked/><label for="Hiking"> Display Hiking</label><br>
@@ -89,7 +89,7 @@
         <a href="./AboutUs.html" class="button">About</a>
       </div>
     </div>
-    
+
 
 
     <!--Right sidebar -->
@@ -103,8 +103,43 @@
         <p id="results_T" align="center">Temperature</p>
         <p id="results_H" align="center">Humidity</p>
         <div><h2><img id="side_weather" src="Images/clear-day.png" alt="weather icon"></h2></div>
-        
-        
+
+        <button id="myBtn">Add a Comment</button>
+
+        <!-- This div holds the modal -->
+        <div id="myModal" class="modal">
+
+        <div class="modal-content">
+          <span class="close">&times;</span>
+
+          <div class="header">
+            <h1>Location<h1>
+          </div>
+
+          <div class="everythingButTheHeader">
+            <form method="post" action="UserRegistrationFrontend.php">
+              <label>What did you do there?</label>
+              <div class="input-group">
+                <input type="checkbox" name="hiking">Hiking</input>
+                <input type="checkbox" name="biking">Biking</input>
+                <input type="checkbox" name="skiing">Skiing</input>
+                <input type="checkbox" name="climbing">Climbing</input>
+            	</div>
+            	<div class="input-group">
+                <textarea placeholder="Write your comment here" cols="40" rows="5" name="comment"></textarea>
+            	</div>
+              <label>When were you there?</label>
+              <div class="input-group">
+            	  <input type="date" name="date"</button>
+            	</div>
+            	<div class="input-group">
+            	  <button type="submit" class="btn" name="registerUser">Submit Comment</button>
+          	  </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src='ModalScript.js'></script>
 
       <!-- Comments for each location -->
       <h3 align="center"><u>Comments</u></h3>
