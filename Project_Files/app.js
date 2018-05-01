@@ -3,10 +3,15 @@ var marker_bike = [];
 var marker_climb = [];
 var marker_hike = [];
 var marker_ski = [];
+var marker_general = [];
 var climb_place = ['EiRTaGVsZiBSZCwgQ2HDsW9uIENpdHksIENPIDgxMjEyLCBVU0E','ChIJSY4n20iTa4cR3o27gOAV59k'];
 var bike_place = ['ChIJVW4bySWla4cRaD9fkeKanvs','ChIJvV4onwjua4cRHSZ-bMRpYPw'];
 var hike_place = ['ChIJs67WrVNXE4cRZi0KU4Dnfc0'];
 var ski_place = ['ChIJjxt7zM1HQIcRYFVYkLuaAco'];
+var general_place = ['ChIJWd2U7rRQaocRllxVIFIp5Ts','ChIJ06-NJ06Na4cRWIAboHw7Ocg','ChIJ5SL_Vd71aocRHD59U1wlA8s','ChIJeV6vyIahbocRHxIKToC6z9I',
+'EiRTaGVsZiBSZCwgQ2HDsW9uIENpdHksIENPIDgxMjEyLCBVU0E','ChIJc_TmcHvYPocR4eO6cSF37jg'];
+var climb_count = bike_count = hike_count = ski_count = 0;
+
 
 function initMap() {
     var gps = {lat: 38.75, lng: -104.92};
@@ -79,7 +84,6 @@ function initMap() {
 		marker_ski.push(marker);
 		google.maps.event.addListener(marker, 'click', function() {
 			document.getElementById('location_name').innerHTML = place.name;
-			document.getElementById('side_icon').src = "Images/skiing.png";
 			showWeather(place.geometry.location.lat(), place.geometry.location.lng());
                         comments();
 		    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + 
@@ -103,7 +107,38 @@ function initMap() {
 		marker_hike.push(marker);
 		google.maps.event.addListener(marker, 'click', function() {
 			document.getElementById('location_name').innerHTML = place.name;
-			document.getElementById('side_icon').src = "Images/hiking.png";
+			showWeather(place.geometry.location.lat(), place.geometry.location.lng());
+			comments();
+		    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
+					  'Temp: ' + '38' + '<br>' + 'Humidity: 65%' + '<br>' + 'Overview: Clear' + '</div>');
+		    infowindow.open(map, this);
+		});
+            }
+	});
+    }
+    // general icons
+    for (var i=0; i<general_place.length; i++) {
+	service.getDetails({
+            placeId: general_place[i]
+	}, function(place, status) {
+            if (status === google.maps.places.PlacesServiceStatus.OK) {
+		var marker = new google.maps.Marker({
+		    map: map,
+		    position: place.geometry.location,
+		});
+		marker_general.push(marker);
+		google.maps.event.addListener(marker, 'click', function() {
+			
+			document.getElementById('location_name').innerHTML = place.name;
+			document.getElementById('climbing_count').innerHTML = climb_count;
+			document.getElementById('cycling_count').innerHTML = bike_count;
+			document.getElementById('hiking_count').innerHTML = hike_count;
+			document.getElementById('skiing_count').innerHTML = ski_count;
+			oReq.open("get", "getCounts.php", true);
+    //                               ^ Don't block the rest of the execution.
+    //                                 Don't wait until the request finishes to 
+    //                                 continue.
+			oReq.send();
 			showWeather(place.geometry.location.lat(), place.geometry.location.lng());
 			comments();
 		    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
@@ -114,7 +149,17 @@ function initMap() {
 	});
     }
 }
+function reqListener () {
+      console.log(this.responseText);
+}
 
+var oReq = new XMLHttpRequest(); //New request object
+oReq.onload = function() {
+	//This is where you handle what to do with the response.
+	//The actual data is found on this.responseText
+	hike_count = this.responseText; //Will alert: 42
+};
+    
 function checkBike(){
     var checkbox = document.getElementById('Biking');
     if (checkbox.checked == true){
@@ -133,11 +178,13 @@ function checkClimb(){
     if (checkbox.checked == true){
 	for (var i=0; i<marker_climb.length; i++) {
 	    marker_climb[i].setVisible(true);
+	    climb_count = 1;
 	}
         
     } else {
 	for (var i=0; i<marker_climb.length; i++) {
 	    marker_climb[i].setVisible(false);
+	    climb_count = 0;
 	}
     }
 }
@@ -146,6 +193,7 @@ function checkSki(){
     if (checkbox.checked == true){
 	for (var i=0; i<marker_ski.length; i++) {
 	    marker_ski[i].setVisible(true);
+	    
 	}
         
     } else {

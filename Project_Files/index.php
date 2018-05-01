@@ -98,7 +98,39 @@
 
       <!-- Weather Icons and values -->
       <h2 id="location_name" align="center"><b>LOCATION NAME</b><br> </h2>
-        <div><h2><img id="side_icon" src="Images/climb.png" alt="climb icon"></h2></div>
+      <div align="center">
+			<div class="row" align="center">
+		<div class="column">
+			<img src="Images/climb.png" alt="climb icon" style="width:10%, display:inline;" >
+		</div>
+		<div class="column">
+			<img src="Images/cycling.png" alt="cyling icon" style="width:10%, display:inline;" >
+		</div>
+		<div class="column">
+			<img src="Images/hiking.png" alt="hiking icon" style="width:10%, display:inline;">
+		</div>
+		<div class="column">
+			<img src="Images/skiing.png" alt="skiing icon" style="width:10%, display:inline;">
+		</div>
+	</div> 
+	<div class="row" align="center">
+		<div class="column">
+			<b id="climbing_count">0</b>
+		</div>
+		<div class="column">
+			<b id="cycling_count">0</b>
+		</div>
+		<div class="column">
+			<b id="hiking_count">0</b>
+		</div>
+		<div class="column">
+			<b id="skiing_count">0</b>
+		</div>
+	</div> 
+	  </div>
+	  
+	
+	
         <p id="results_S" align="center">Summary</p>
         <p id="results_T" align="center">Temperature</p>
         <p id="results_H" align="center">Humidity</p>
