@@ -201,6 +201,13 @@ var object;
  	document.getElementById('results_S').innerHTML = object.currently.summary;
  	document.getElementById('results_H').innerHTML = "Humidity: " + object.currently.humidity*100 + "%";
  	document.getElementById('results_T').innerHTML = object.currently.temperature + "\xb0";
+ 	document.getElementById('results_WS').innerHTML = "Wind Speed: " + object.currently.windSpeed + " MPH";
+ 	document.getElementById('results_WD').innerHTML = "Wind Direction: " + object.currently.windBearing + "\xb0";
+ 	document.getElementById('results_V').innerHTML = "Visibility: " + object.currently.visibility + " Miles";
+ 	document.getElementById('results_CC').innerHTML = "Cloud Cover: " + object.currently.cloudCover;
+ 	document.getElementById('results_RPR').innerHTML = "Precip Rate: " + object.currently.precipIntensity + " IN/HR";
+ 	document.getElementById('results_SF').innerHTML = "Snowfall: " + object.currently.precipAccumulation + " IN";
+ 	document.getElementById('results_UV').innerHTML = "UVI: " + object.currently.uvIndex;
         document.getElementById('side_weather').src = "Images/" + object.currently.icon + ".png";
     console.log(object);
  }
