@@ -77,7 +77,7 @@
 
                   <?php endif ?>
                   <?php  if(isset($_SESSION['username'])) : ?>
-                  <p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
+                  <p> <a href="index.php?logout='1'" style="color: red;">Logout</a> </p>
                   <?php endif ?>
                 </div>
               </form>
