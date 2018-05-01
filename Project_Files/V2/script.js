@@ -3,10 +3,29 @@ var marker_bike = [];
 var marker_climb = [];
 var marker_hike = [];
 var marker_ski = [];
-var climb_place = ['EiRTaGVsZiBSZCwgQ2HDsW9uIENpdHksIENPIDgxMjEyLCBVU0E','ChIJSY4n20iTa4cR3o27gOAV59k'];
-var bike_place = ['ChIJVW4bySWla4cRaD9fkeKanvs','ChIJvV4onwjua4cRHSZ-bMRpYPw'];
-var hike_place = ['ChIJs67WrVNXE4cRZi0KU4Dnfc0'];
-var ski_place = ['ChIJjxt7zM1HQIcRYFVYkLuaAco'];
+var climb_place = ['EiRTaGVsZiBSZCwgQ2HDsW9uIENpdHksIENPIDgxMjEyLCBVU0E',
+					'ChIJSY4n20iTa4cR3o27gOAV59k',
+					'ChIJB95FnoiZa4cRubxPoXScpJo', 
+					'ChIJTbWm3slaE4cRh4KiIfmuDC4', 
+					'ChIJ8Wo3SfxeP4cRvIuts5LWMT8', 
+					'ChIJ15RzCnwRaYcR1EbLsraZCss', 
+					'ChIJIS5HT-v-RocRP4ulj0_qqF8'];
+var bike_place = ['ChIJVW4bySWla4cRaD9fkeKanvs',
+					'ChIJvV4onwjua4cRHSZ-bMRpYPw',
+					'EilUcmFpbCBSaWRnZSBSZCwgR3JhbmQgTGFrZSwgQ08gODA0NDcsIFVTQQ',
+					'ChIJc_TmcHvYPocR4eO6cSF37jg',
+					'ChIJaZ38Yam_a4cRhBs7Z7imOQU', 
+					'ChIJxTW7otMPEocRbHmbW1akpu0'];
+var hike_place = ['ChIJs67WrVNXE4cRZi0KU4Dnfc0',
+					'ChIJE3fMtNlhOYcRA09S8KXgs8c', 
+					'ChIJ18hsDtqCa4cRrdYsOQfng3w',
+					'ChIJwd_EEkfsa4cRqy6eShKXFXY',
+					'ChIJw7R-_C1BbocRlaEOt-HIAM4'];
+var ski_place = ['ChIJjxt7zM1HQIcRYFVYkLuaAco',
+					'ChIJMeI60rXKa4cRxrRKAsrYB3o',
+					'ChIJ49M4ij5yQIcRn_Pn1RluADc',
+					'ChIJBRVVOPlfaocR7pkVWFnW76c', 
+					'ChIJsVch7dLHa4cR6RwKCvhx_l0'];
 
 function initMap() {
     var gps = {lat: 38.75, lng: -104.92};
