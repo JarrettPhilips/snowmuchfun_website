@@ -112,7 +112,7 @@
 		<div class="column">
 			<img src="Images/skiing.png" alt="skiing icon" style="width:10%, display:inline;">
 		</div>
-	</div> 
+	</div>
 	<div class="row" align="center">
 		<div class="column">
 			<b id="climbing_count">0</b>
@@ -126,11 +126,11 @@
 		<div class="column">
 			<b id="skiing_count">0</b>
 		</div>
-	</div> 
+	</div>
 	  </div>
-	  
-	
-	
+
+
+
         <p id="results_S" align="center">Summary</p>
         <p id="results_T" align="center">Temperature</p>
         <p id="results_H" align="center">Humidity</p>

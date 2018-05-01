@@ -10,7 +10,7 @@ var ski_place = ['ChIJjxt7zM1HQIcRYFVYkLuaAco'];
 
 function initMap() {
     var gps = {lat: 38.75, lng: -104.92};
-    map = new google.maps.Map(document.getElementById('map'), {
+    map = new google.maps.Map(document.getElementById('mapDiv'), {
         center: gps,
         zoom: 7
     });
@@ -31,8 +31,8 @@ function initMap() {
 		marker_climb.push(marker);
 		google.maps.event.addListener(marker, 'click', function() {
 			document.getElementById('location_name').innerHTML = place.name;
-			document.getElementById('side_icon').src = "Images/climb.png";
 			showWeather(place.geometry.location.lat(), place.geometry.location.lng());
+                        comments();
 		    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
 					  'Temp: ' + '38' + '<br>' + 'Humidity: 65%' + '<br>' + 'Overview: Clear' + '</div>');
 		    infowindow.open(map, this);
@@ -54,8 +54,8 @@ function initMap() {
 		marker_bike.push(marker);
 		google.maps.event.addListener(marker, 'click', function() {
 			document.getElementById('location_name').innerHTML = place.name;
-			document.getElementById('side_icon').src = "Images/cycling.png";
 			showWeather(place.geometry.location.lat(), place.geometry.location.lng());
+                        comments();
 		    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
 					  'Temp: ' + '38' + '<br>' + 'Humidity: 65%' + '<br>' + 'Overview: Clear' + '</div>');
 		    infowindow.open(map, this);
@@ -77,8 +77,8 @@ function initMap() {
 		marker_ski.push(marker);
 		google.maps.event.addListener(marker, 'click', function() {
 			document.getElementById('location_name').innerHTML = place.name;
-			document.getElementById('side_icon').src = "Images/skiing.png";
 			showWeather(place.geometry.location.lat(), place.geometry.location.lng());
+                        comments();
 		    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
 					  'Temp: ' + '38' + '<br>' + 'Humidity: 65%' + '<br>' + 'Overview: Clear' + '</div>');
 		    infowindow.open(map, this);
@@ -100,8 +100,8 @@ function initMap() {
 		marker_hike.push(marker);
 		google.maps.event.addListener(marker, 'click', function() {
 			document.getElementById('location_name').innerHTML = place.name;
-			document.getElementById('side_icon').src = "Images/hiking.png";
 			showWeather(place.geometry.location.lat(), place.geometry.location.lng());
+			comments();
 		    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
 					  'Temp: ' + '38' + '<br>' + 'Humidity: 65%' + '<br>' + 'Overview: Clear' + '</div>');
 		    infowindow.open(map, this);
@@ -173,17 +173,22 @@ function showWeather(lat, long) {
     script.type = "text/javascript";
     script.src = url;
     document.getElementsByTagName("head")[0].appendChild(script);
-    var weatherIcon = displayWeather(object);
-    return weatherIcon;
+    displayWeather(object)
 }
 
 var object;
 
  function displayWeather(object) {
  	document.getElementById('results_S').innerHTML = object.currently.summary;
- 	document.getElementById('results_H').innerHTML = "Humidity: " + object.currently.humidity*100 + " %";
- 	document.getElementById('results_T').innerHTML = object.currently.temperature + " \xb0F";
- 	document.getElementById('side_weather').src = "Images/" + object.currently.icon + ".png";
+ 	document.getElementById('results_H').innerHTML = "Humidity: " + object.currently.humidity*100 + "%";
+ 	document.getElementById('results_T').innerHTML = object.currently.temperature + "\xb0";
+        document.getElementById('side_weather').src = "Images/" + object.currently.icon + ".png";
     console.log(object);
-    return;
  }
+
+function comments(){
+        $.post('/snowmuchfun.sportsontheweb.net/getComments.php', {
+          loc: document.getElementById('location_name').innerHTML
+        });
+        document.getElementById('location_name').innerHTML = "apple";
+}

@@ -24,6 +24,23 @@ tInput {
 }
 
 /*
+  Sidebar
+*/
+#weatherSectionDiv {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+#commentSectionDiv {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+#locationTitleDiv {
+
+}
+
+/*
     Other
 */
 html, body{
@@ -31,6 +48,7 @@ html, body{
     padding: 0;
     height: 100%;
     width: 100%;
+    /*overflow: hidden;*/
 }
 
 body {
@@ -92,15 +110,14 @@ img {
     width: 20%;
 }
 
-#mapDiv {
-    float: right;
-    height: 100%;
-    margin-left: 200px;
-    margin-right: 260px;
-}
-
 #loginDiv{
   float: right;
+}
+
+#contentDiv {
+  height: 100%;
+  width: 100%;
+  background-color: lime;
 }
 
 /*
@@ -113,7 +130,7 @@ textarea {
 .header {
   width: 100%;
   color: white;
-  font-family:'Roboto';
+  font-family: 'Work Sans', sans-serif;
   background: #2f3640;
   text-align: center;
   border-bottom: none;
@@ -186,6 +203,8 @@ textarea {
 */
 #mapDiv {
   height: 100%;
+  width: 80%;
   margin: 0;
   padding: 0;
+  background-color: blue;
 }

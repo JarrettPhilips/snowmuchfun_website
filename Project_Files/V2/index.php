@@ -16,6 +16,10 @@
   <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js'></script>
   <script type='text/javascript' src='script.js'></script>
   <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat|Oxygen|Raleway|Work+Sans:100" rel="stylesheet">
+
+  <meta name="viewport" content="initial-scale=1.0">
+  <meta charset="utf-8">
+
   <title>WEATHER</title>
 </head>
 
@@ -84,38 +88,60 @@
     </div>
   </div>
 
-  <div>
+  <div id="contentDiv">
     <!--
       Side Menu
     -->
     <div id="sidebar">
-      <!-- Button triggers comment modal -->
-      <button id="commentBtn">Add a Comment</button>
+      <div id="locationTitleDiv">
+        <h2 id="location_name" align="center">LOCATION NAME</h2>
+      </div>
 
-      <!-- This div holds the comment modal -->
-      <div id="commentModal" class="modal">
-        <div class="modal-content">
-          <span id="commentClose" class="close">&times;</span>
-
-          <div class="header"><h1>Location</h1></div>
-
-          <div class="everythingButTheHeader">
-            <form method="post" action="index.php">
-              <label>What did you do there?</label>
-              <div class="input-group">
-                Hiking <input type="checkbox" name="activities[]" id="activities" value="hiking">
-                Biking <input type="checkbox" name="activities[]" id="activities" value="biking">
-                Skiing <input type="checkbox" name="activities[]" id="activities" value="skiing">
-                Climbing <input type="checkbox" name="activities[]" id="activities" value="climbing">
-              </div>
-
-              <div class="input-group"><textarea placeholder="Write your comment here" cols="40" rows="5" name="comment"></textarea></div>
-              <label>When were you there?</label>
-              <div class="input-group"><input type="date" name="date"</button></div>
-              <div class="input-group"><button type="submit" class="btn" name="submitComment">Submit Comment</button></div>
-            </form>
-          </div>
+      <div id="weatherSectionDiv">
+        <div id="weatherTitleDiv">
+          <p id="results_T">T</p>
         </div>
+
+        <div id="weatherSubtitleDiv">
+          <p id="results_S">Summary</p>
+        </div>
+
+        <div id="weatherInfoDiv">
+          <p id="results_H">Humidity</p>
+        </div>
+      </div>
+
+      <div id="commentSectionDiv">
+        <h2>Comments</h2>
+
+        <!-- Button triggers comment modal -->
+        <button id="btn">Add a Comment</button>
+
+        <!-- This div holds the comment modal -->
+        <div id="commentModal" class="modal">
+          <div class="modal-content">
+            <span id="commentClose" class="close">&times;</span>
+
+            <div class="header"><h1>Location</h1></div>
+
+            <div class="everythingButTheHeader">
+              <form method="post" action="index.php">
+                <label>What did you do there?</label>
+                <div class="input-group">
+                  Hiking <input type="checkbox" name="activities[]" id="activities" value="hiking">
+                  Biking <input type="checkbox" name="activities[]" id="activities" value="biking">
+                  Skiing <input type="checkbox" name="activities[]" id="activities" value="skiing">
+                  Climbing <input type="checkbox" name="activities[]" id="activities" value="climbing">
+                </div>
+
+                <div class="input-group"><textarea placeholder="Write your comment here" cols="40" rows="5" name="comment"></textarea></div>
+                <label>When were you there?</label>
+                <div class="input-group"><input type="date" name="date"</button></div>
+                <div class="input-group"><button type="submit" class="btn" name="submitComment">Submit Comment</button></div>
+              </form>
+            </div>
+          </div>
+      </div>
     </div>
     </div>
     <script type="text/javascript" src='ModalScript.js'></script>
@@ -124,9 +150,20 @@
       Map
     -->
     <div id="mapDiv">
+      <!--
+      <script>
+        var map;
+        function initMap() {
+          map = new google.maps.Map(document.getElementById('mapDiv'), {
+            center: {lat: 40.00, lng: -105.00},
+            zoom: 6, mapTypeId: google.maps.MapTypeId.HYBRID
+          });
+        }
+      </script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQK0exnojgLgHApfdgjn6Km32cPxIXQZo&callback=initMap" async defer></script>
+      -->
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQK0exnojgLgHApfdgjn6Km32cPxIXQZo&libraries=places&callback=initMap"></script>
     </div>
   </div>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQK0exnojgLgHApfdgjn6Km32cPxIXQZo&libraries=places&callback=initMap"></script>
-
 </body>
 </html>
