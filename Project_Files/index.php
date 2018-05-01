@@ -101,7 +101,7 @@
       <div align="center">
 			<div class="row" align="center">
 		<div class="column">
-			<img src="Images/climb.png" alt="climb icon" style="width:10%, display:inline;" >
+			<img src="Images/b.png" alt="climb icon" style="width:10%, display:inline;" >
 		</div>
 		<div class="column">
 			<img src="Images/cycling.png" alt="cyling icon" style="width:10%, display:inline;" >
