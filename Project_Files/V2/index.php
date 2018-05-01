@@ -94,7 +94,7 @@
     -->
     <div id="sidebar">
       <div id="locationTitleDiv">
-        <h2 id="location_name" align="center">LOCATION NAME</h2>
+        <h2 id="location_name" align="center">Boulder</h2>
       </div>
 
       <div id="weatherSectionDiv">
@@ -106,16 +106,30 @@
           <p id="results_S">Summary</p>
         </div>
 
-        <div id="weatherInfoDiv">
-          <p id="results_H">Humidity</p>
+        <div class="weatherInfoDiv">
+          <p class="weatherInfo" id="results_H">Humidity</p>
+          <p class="weatherInfo" id="results_WS">WindSpeed</p>
+          <p class="weatherInfo" id="results_WD">WindDirection</p>
+          <p class="weatherInfo" id="results_V">Visibility</p>
+        </div>
+        <div class="weatherInfoDiv">
+          <p class="weatherInfo" id="results_CC">Cloud</p>
+          <p class="weatherInfo" id="results_RPR">liquidRate</p>
+          <p class="weatherInfo" id="results_SF">Snowfall</p>
+          <p class="weatherInfo" id="results_UV">UV</p>
+        </div>
+        <div class="weatherInfoDiv">
+          <p class="weatherInfo" id="results_SR">Sunrise</p>
+          <p class="weatherInfo" id="results_SS">Sunset</p>
         </div>
       </div>
+      <script> showWeather(40.015, -105.2705) </script>
 
       <div id="commentSectionDiv">
-        <h2>Comments</h2>
+        <h2 id="commentTitle">Comments</h2>
 
         <!-- Button triggers comment modal -->
-        <button id="btn">Add a Comment</button>
+        <button id="commentBtn">Add a Comment</button>
 
         <!-- This div holds the comment modal -->
         <div id="commentModal" class="modal">
@@ -145,7 +159,6 @@
     </div>
     </div>
     <script type="text/javascript" src='ModalScript.js'></script>
-
 
     <!--
       Map

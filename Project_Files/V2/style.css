@@ -24,20 +24,58 @@ tInput {
 }
 
 /*
-  Sidebar
+  Weather
 */
+
+
 #weatherSectionDiv {
   background-color: var(--secondary-color);
   color: var(--primary-color);
+  font-family: 'Work Sans', sans-serif;
 }
 
 #commentSectionDiv {
+  font-family: 'Work Sans', sans-serif;
   background-color: var(--primary-color);
   color: var(--secondary-color);
 }
 
-#locationTitleDiv {
+#location_name {
+  text-align: center;
+  font-size: 24px;
+  font-family: 'Work Sans', sans-serif;
+  background-color: var(--secondary-color)
+  color: var(--primary-color)
+}
 
+#results_T {
+  text-align: center;
+  font-size: 60px;
+  background-color: var(--secondary-color)
+  color: var(--primary-color)
+}
+
+#results_S {
+  font-size: 16px;
+  text-align: center;
+}
+
+.weatherInfoDiv {
+  font-size: 10px;
+  text-align: center;
+}
+
+.weatherInfo {
+  position:relative;
+  float: left;
+}
+
+/*
+  Comments
+*/
+#commentTitle {
+  text-align: center;
+  font-size: 24px;
 }
 
 /*
