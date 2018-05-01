@@ -54,14 +54,13 @@
 
       <!-- This div holds the login modal -->
       <div id="loginModal" class="modal">
-        <div class="modal-content">
+        <div id="loginModal-content" class="modal-content">
           <span class="close">&times;</span>
 
           <div class="header"><h1>Log In</h1></div>
 
           <div class="everythingButTheHeader">
               <!-- Login Form -->
-              <p style="font-size:18px; text-align:center"><b>Sign In</b></p>
               <form method="post" action="index.php">
                 <?php include('UserRegistrationError.php'); ?>
                 <?php include('UserDatabaseBackend.php'); ?>
@@ -94,7 +93,7 @@
     -->
     <div id="sidebar">
       <div id="locationTitleDiv">
-        <h2 id="location_name" align="center">Boulder</h2>
+        <h2 id="location_name">Boulder</h2>
       </div>
 
       <div id="weatherSectionDiv">
@@ -129,7 +128,9 @@
         <h2 id="commentTitle">Comments</h2>
 
         <!-- Button triggers comment modal -->
-        <button id="commentBtn">Add a Comment</button>
+        <div id="commentBtnDiv">
+          <button id="commentBtn">Add a Comment</button>
+        </div>
 
         <!-- This div holds the comment modal -->
         <div id="commentModal" class="modal">

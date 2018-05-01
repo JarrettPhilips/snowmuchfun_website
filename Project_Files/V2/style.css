@@ -13,15 +13,8 @@
 
 
 /*
-    General Use / Themed Items
+  Banner
 */
-tButton {
-
-}
-
-tInput {
-
-}
 
 /*
   Weather
@@ -40,12 +33,15 @@ tInput {
   color: var(--secondary-color);
 }
 
+#locationTitleDiv {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
 #location_name {
   text-align: center;
   font-size: 24px;
   font-family: 'Work Sans', sans-serif;
-  background-color: var(--secondary-color)
-  color: var(--primary-color)
 }
 
 #results_T {
@@ -66,8 +62,7 @@ tInput {
 }
 
 .weatherInfo {
-  position:relative;
-  float: left;
+
 }
 
 /*
@@ -76,6 +71,18 @@ tInput {
 #commentTitle {
   text-align: center;
   font-size: 24px;
+}
+
+#commentBtn {
+  padding: 5px;
+  font-size: 12px;
+  color: var(--primary-color);
+  background: var(--secondary-color);
+  border: none;
+  border-radius: 5px;
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%
 }
 
 /*
@@ -115,6 +122,10 @@ img {
     margin: 0px;
 }
 
+#loginModal-content {
+  width: 16%;
+}
+
 #title {
     position: absolute;
     font-size: 100px;
@@ -139,6 +150,7 @@ img {
     display: inline-block;
     width: 100%;
     opacity: 10%;
+    margin-bottom: -3px;
 }
 
 #sidebar {
@@ -155,7 +167,7 @@ img {
 #contentDiv {
   height: 100%;
   width: 100%;
-  background-color: lime;
+  background-color: var(--primary-color);
 }
 
 /*
@@ -244,5 +256,5 @@ textarea {
   width: 80%;
   margin: 0;
   padding: 0;
-  background-color: blue;
+  background-color: var(--primary-color);
 }
