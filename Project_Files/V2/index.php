@@ -117,10 +117,6 @@
           <p class="weatherInfo" id="results_SF">Snowfall</p>
           <p class="weatherInfo" id="results_UV">UV</p>
         </div>
-        <div class="weatherInfoDiv">
-          <p class="weatherInfo" id="results_SR">Sunrise</p>
-          <p class="weatherInfo" id="results_SS">Sunset</p>
-        </div>
       </div>
       <script> showWeather(40.015, -105.2705) </script>
 
