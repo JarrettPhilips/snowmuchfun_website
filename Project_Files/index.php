@@ -18,7 +18,7 @@
     <meta charset="utf-8">
 
     <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js'></script>
-    <script type='text/javascript' src='app.js'></script>
+    <script type='text/javascript' src='script.js'></script>
   </head>
 
   <body id="index">
@@ -104,9 +104,12 @@
         <p id="results_H" align="center">Humidity</p>
         <div><h2><img id="side_weather" src="Images/clear-day.png" alt="weather icon"></h2></div>
 
+        <!-- Button triggers modal -->
+
         <button id="myBtn">Add a Comment</button>
 
         <!-- This div holds the modal -->
+        <?php include('CommentSubmissionBackend.php'); ?>
         <div id="myModal" class="modal">
 
         <div class="modal-content">
@@ -117,29 +120,30 @@
           </div>
 
           <div class="everythingButTheHeader">
-            <form method="post" action="UserRegistrationFrontend.php">
+            <form method="post" action="index.php">
               <label>What did you do there?</label>
-              <div class="input-group">
-                <input type="checkbox" name="hiking">Hiking</input>
-                <input type="checkbox" name="biking">Biking</input>
-                <input type="checkbox" name="skiing">Skiing</input>
-                <input type="checkbox" name="climbing">Climbing</input>
-            	</div>
-            	<div class="input-group">
-                <textarea placeholder="Write your comment here" cols="40" rows="5" name="comment"></textarea>
-            	</div>
-              <label>When were you there?</label>
-              <div class="input-group">
-            	  <input type="date" name="date"</button>
-            	</div>
-            	<div class="input-group">
-            	  <button type="submit" class="btn" name="registerUser">Submit Comment</button>
-          	  </div>
+                <div class="input-group">
+                  Hiking<input type="checkbox" name="activities[]" id="activities" value="hiking">
+                  Biking<input type="checkbox" name="activities[]" id="activities" value="biking">
+                  Skiing<input type="checkbox" name="activities[]" id="activities" value="skiing">
+                  Climbing<input type="checkbox" name="activities[]" id="activities" value="climbing">
+                </div>
+                <div class="input-group">
+                  <textarea placeholder="Write your comment here" cols="40" rows="5" name="comment"></textarea>
+                </div>
+                  <label>When were you there?</label>
+                <div class="input-group">
+                  <input type="date" name="date"</button>
+                </div>
+                <div class="input-group">
+                  <button type="submit" class="btn" name="submitComment">Submit Comment</button>
+                </div>
               </form>
             </div>
           </div>
-        </div>
-        <script type="text/javascript" src='ModalScript.js'></script>
+
+          </div>
+          <script type="text/javascript" src='ModalScript.js'></script>
 
       <!-- Comments for each location -->
       <h3 align="center"><u>Comments</u></h3>

@@ -79,7 +79,7 @@ function initMap() {
 			document.getElementById('location_name').innerHTML = place.name;
 			document.getElementById('side_icon').src = "Images/skiing.png";
 			showWeather(place.geometry.location.lat(), place.geometry.location.lng());
-		    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + 
+		    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
 					  'Temp: ' + '38' + '<br>' + 'Humidity: 65%' + '<br>' + 'Overview: Clear' + '</div>');
 		    infowindow.open(map, this);
 		});
@@ -101,7 +101,7 @@ function initMap() {
 		google.maps.event.addListener(marker, 'click', function() {
 			document.getElementById('location_name').innerHTML = place.name;
 			document.getElementById('side_icon').src = "Images/hiking.png";
-			showWeather(place.geometry.location.lat(), place.geometry.location.lng());		
+			showWeather(place.geometry.location.lat(), place.geometry.location.lng());
 		    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
 					  'Temp: ' + '38' + '<br>' + 'Humidity: 65%' + '<br>' + 'Overview: Clear' + '</div>');
 		    infowindow.open(map, this);
@@ -117,7 +117,7 @@ function checkBike(){
 	for (var i=0; i<marker_bike.length; i++) {
 	    marker_bike[i].setVisible(true);
 	}
-        
+
     } else {
 	for (var i=0; i<marker_bike.length; i++) {
 	    marker_bike[i].setVisible(false);
@@ -130,7 +130,7 @@ function checkClimb(){
 	for (var i=0; i<marker_climb.length; i++) {
 	    marker_climb[i].setVisible(true);
 	}
-        
+
     } else {
 	for (var i=0; i<marker_climb.length; i++) {
 	    marker_climb[i].setVisible(false);
@@ -143,7 +143,7 @@ function checkSki(){
 	for (var i=0; i<marker_ski.length; i++) {
 	    marker_ski[i].setVisible(true);
 	}
-        
+
     } else {
 	for (var i=0; i<marker_ski.length; i++) {
 	    marker_ski[i].setVisible(false);
@@ -156,7 +156,7 @@ function checkHike(){
 	for (var i=0; i<marker_hike.length; i++) {
 	    marker_hike[i].setVisible(true);
 	}
-        
+
     } else {
 	for (var i=0; i<marker_hike.length; i++) {
 	    marker_hike[i].setVisible(false);
@@ -166,15 +166,15 @@ function checkHike(){
 
 
 // Weather Functions
- 
+
 function showWeather(lat, long) {
     var url = `https://api.darksky.net/forecast/5d43c2767b350cf93ce481a6b64b630b/${lat},${long}` + `?format=jsonp&callback=displayWeather`;
     var script = document.createElement("script");
     script.type = "text/javascript";
     script.src = url;
     document.getElementsByTagName("head")[0].appendChild(script);
-    var weatherIcon = displayWeather(object); 
-    return weatherIcon;  
+    var weatherIcon = displayWeather(object);
+    return weatherIcon;
 }
 
 var object;
