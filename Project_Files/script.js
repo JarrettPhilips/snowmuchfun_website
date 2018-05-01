@@ -3,16 +3,10 @@ var marker_bike = [];
 var marker_climb = [];
 var marker_hike = [];
 var marker_ski = [];
-var marker_general = [];
 var climb_place = ['EiRTaGVsZiBSZCwgQ2HDsW9uIENpdHksIENPIDgxMjEyLCBVU0E','ChIJSY4n20iTa4cR3o27gOAV59k'];
 var bike_place = ['ChIJVW4bySWla4cRaD9fkeKanvs','ChIJvV4onwjua4cRHSZ-bMRpYPw'];
 var hike_place = ['ChIJs67WrVNXE4cRZi0KU4Dnfc0'];
 var ski_place = ['ChIJjxt7zM1HQIcRYFVYkLuaAco'];
-var general_place = ['ChIJWd2U7rRQaocRllxVIFIp5Ts','ChIJ06-NJ06Na4cRWIAboHw7Ocg','ChIJwecmbD32aocReqKAZn-PjWI','ChIJeV6vyIahbocRHxIKToC6z9I',
-'EiRTaGVsZiBSZCwgQ2HDsW9uIENpdHksIENPIDgxMjEyLCBVU0E','ChIJc_TmcHvYPocR4eO6cSF37jg'];
-var place_name = ['Arapahoe Basin','Boulder','Breckenridge','Greeley','Shelf Road','Telluride'];
-var climb_count = bike_count = hike_count = ski_count = 0;
-
 
 function initMap() {
     var gps = {lat: 38.75, lng: -104.92};
@@ -39,7 +33,6 @@ function initMap() {
 			document.getElementById('location_name').innerHTML = place.name;
 			document.getElementById('side_icon').src = "Images/climb.png";
 			showWeather(place.geometry.location.lat(), place.geometry.location.lng());
-                        comments();
 		    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
 					  'Temp: ' + '38' + '<br>' + 'Humidity: 65%' + '<br>' + 'Overview: Clear' + '</div>');
 		    infowindow.open(map, this);
@@ -63,7 +56,6 @@ function initMap() {
 			document.getElementById('location_name').innerHTML = place.name;
 			document.getElementById('side_icon').src = "Images/cycling.png";
 			showWeather(place.geometry.location.lat(), place.geometry.location.lng());
-                        comments();
 		    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
 					  'Temp: ' + '38' + '<br>' + 'Humidity: 65%' + '<br>' + 'Overview: Clear' + '</div>');
 		    infowindow.open(map, this);
@@ -85,9 +77,9 @@ function initMap() {
 		marker_ski.push(marker);
 		google.maps.event.addListener(marker, 'click', function() {
 			document.getElementById('location_name').innerHTML = place.name;
+			document.getElementById('side_icon').src = "Images/skiing.png";
 			showWeather(place.geometry.location.lat(), place.geometry.location.lng());
-                        comments();
-		    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + 
+		    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
 					  'Temp: ' + '38' + '<br>' + 'Humidity: 65%' + '<br>' + 'Overview: Clear' + '</div>');
 		    infowindow.open(map, this);
 		});
@@ -108,8 +100,8 @@ function initMap() {
 		marker_hike.push(marker);
 		google.maps.event.addListener(marker, 'click', function() {
 			document.getElementById('location_name').innerHTML = place.name;
+			document.getElementById('side_icon').src = "Images/hiking.png";
 			showWeather(place.geometry.location.lat(), place.geometry.location.lng());
-			comments();
 		    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
 					  'Temp: ' + '38' + '<br>' + 'Humidity: 65%' + '<br>' + 'Overview: Clear' + '</div>');
 		    infowindow.open(map, this);
@@ -117,78 +109,15 @@ function initMap() {
             }
 	});
     }
-    // general icons
-    for (var i=0; i<general_place.length; i++) {
-	service.getDetails({
-            placeId: general_place[i]
-	}, function(place, status) {
-            if (status === google.maps.places.PlacesServiceStatus.OK) {
-		var marker = new google.maps.Marker({
-		    map: map,
-		    position: place.geometry.location,
-		});
-		marker_general.push(marker);
-		google.maps.event.addListener(marker, 'click', function() {
-			
-			document.getElementById('location_name').innerHTML = place.name;
-			document.getElementById('climbing_count').innerHTML = climb_count;
-			document.getElementById('cycling_count').innerHTML = bike_count;
-			document.getElementById('hiking_count').innerHTML = hike_count;
-			document.getElementById('skiing_count').innerHTML = ski_count;
-			oReq.open("get", "getCounts.php?q="+place.name,true);
-			oReq.send();
-			showWeather(place.geometry.location.lat(), place.geometry.location.lng());
-			comments();
-		    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
-					  'Temp: ' + '38' + '<br>' + 'Humidity: 65%' + '<br>' + 'Overview: Clear' + '</div>');
-		    infowindow.open(map, this);
-		    
-		});
-            }
-	});
-    }
-}
-function reqListener () {
-      console.log(this.responseText);
 }
 
-var oReq = new XMLHttpRequest(); //New request object
-oReq.onload = function() {
-	//This is where you handle what to do with the response.
-	//The actual data is found on this.responseText
-	climb_count = this.responseText; 
-};
-
-function showCounts(locationName) {
-    if (str == "") {
-        document.getElementById("climbing_count").innerHTML = "";
-        return;
-    } else {
-        if (window.XMLHttpRequest) {
-            // code for IE7+, Firefox, Chrome, Opera, Safari
-            xmlhttp = new XMLHttpRequest();
-        } else {
-            // code for IE6, IE5
-            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-				climing_count = this.responseText;
-                document.getElementById("climbing_count").innerHTML = climbing_count;
-            }
-        };
-        xmlhttp.open("GET","getCounts.php?q="+locationName,true);
-        xmlhttp.send();
-    }
-}
-    
 function checkBike(){
     var checkbox = document.getElementById('Biking');
     if (checkbox.checked == true){
 	for (var i=0; i<marker_bike.length; i++) {
 	    marker_bike[i].setVisible(true);
 	}
-        
+
     } else {
 	for (var i=0; i<marker_bike.length; i++) {
 	    marker_bike[i].setVisible(false);
@@ -200,13 +129,11 @@ function checkClimb(){
     if (checkbox.checked == true){
 	for (var i=0; i<marker_climb.length; i++) {
 	    marker_climb[i].setVisible(true);
-	    climb_count = 1;
 	}
-        
+
     } else {
 	for (var i=0; i<marker_climb.length; i++) {
 	    marker_climb[i].setVisible(false);
-	    climb_count = 0;
 	}
     }
 }
@@ -215,9 +142,8 @@ function checkSki(){
     if (checkbox.checked == true){
 	for (var i=0; i<marker_ski.length; i++) {
 	    marker_ski[i].setVisible(true);
-	    
 	}
-        
+
     } else {
 	for (var i=0; i<marker_ski.length; i++) {
 	    marker_ski[i].setVisible(false);
@@ -230,7 +156,7 @@ function checkHike(){
 	for (var i=0; i<marker_hike.length; i++) {
 	    marker_hike[i].setVisible(true);
 	}
-        
+
     } else {
 	for (var i=0; i<marker_hike.length; i++) {
 	    marker_hike[i].setVisible(false);
@@ -240,14 +166,15 @@ function checkHike(){
 
 
 // Weather Functions
- 
+
 function showWeather(lat, long) {
     var url = `https://api.darksky.net/forecast/5d43c2767b350cf93ce481a6b64b630b/${lat},${long}` + `?format=jsonp&callback=displayWeather`;
     var script = document.createElement("script");
     script.type = "text/javascript";
     script.src = url;
     document.getElementsByTagName("head")[0].appendChild(script);
-    displayWeather(object)   
+    var weatherIcon = displayWeather(object);
+    return weatherIcon;
 }
 
 var object;
@@ -256,13 +183,7 @@ var object;
  	document.getElementById('results_S').innerHTML = object.currently.summary;
  	document.getElementById('results_H').innerHTML = "Humidity: " + object.currently.humidity*100 + " %";
  	document.getElementById('results_T').innerHTML = object.currently.temperature + " \xb0F";
-        document.getElementById('side_weather').src = "Images/" + object.currently.icon + ".png";
+ 	document.getElementById('side_weather').src = "Images/" + object.currently.icon + ".png";
     console.log(object);
+    return;
  }
-
-function comments(){
-        $.post('/snowmuchfun.sportsontheweb.net/getComments.php', {
-          loc: document.getElementById('location_name').innerHTML
-        });
-        document.getElementById('location_name').innerHTML = "apple";
-}
