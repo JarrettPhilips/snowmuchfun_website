@@ -65,9 +65,8 @@
                 <div class="input-group"><input type="password" placeholder="Password" name="password"></div>
                 <div cla ss="input-group">
                   <button type="submit" class="btn btn-success mb-2" name="loginUser">Log In</button>
-                  <button type="submit" class="btn tbn-success mb-2" name="signUp">Sign Up</button>
+                  <button type="submit" class="btn tbn-success mb-2" name="signUp"><a href="UserRegistrationFrontend.php" class="btn" style="text-decoration:none; padding:0px;">Sign Up</a></button></button>
                 </div>
-
 
                 <div class="content">
                   <?php if(isset($_SESSION['success'])) : ?>
