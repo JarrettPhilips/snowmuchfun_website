@@ -8,8 +8,9 @@ var climb_place = ['EiRTaGVsZiBSZCwgQ2HDsW9uIENpdHksIENPIDgxMjEyLCBVU0E','ChIJSY
 var bike_place = ['ChIJVW4bySWla4cRaD9fkeKanvs','ChIJvV4onwjua4cRHSZ-bMRpYPw'];
 var hike_place = ['ChIJs67WrVNXE4cRZi0KU4Dnfc0'];
 var ski_place = ['ChIJjxt7zM1HQIcRYFVYkLuaAco'];
-var general_place = ['ChIJWd2U7rRQaocRllxVIFIp5Ts','ChIJ06-NJ06Na4cRWIAboHw7Ocg','ChIJ5SL_Vd71aocRHD59U1wlA8s','ChIJeV6vyIahbocRHxIKToC6z9I',
+var general_place = ['ChIJWd2U7rRQaocRllxVIFIp5Ts','ChIJ06-NJ06Na4cRWIAboHw7Ocg','ChIJwecmbD32aocReqKAZn-PjWI','ChIJeV6vyIahbocRHxIKToC6z9I',
 'EiRTaGVsZiBSZCwgQ2HDsW9uIENpdHksIENPIDgxMjEyLCBVU0E','ChIJc_TmcHvYPocR4eO6cSF37jg'];
+var place_name = ['Arapahoe Basin','Boulder','Breckenridge','Greeley','Shelf Road','Telluride'];
 var climb_count = bike_count = hike_count = ski_count = 0;
 
 
@@ -134,16 +135,14 @@ function initMap() {
 			document.getElementById('cycling_count').innerHTML = bike_count;
 			document.getElementById('hiking_count').innerHTML = hike_count;
 			document.getElementById('skiing_count').innerHTML = ski_count;
-			oReq.open("get", "getCounts.php", true);
-    //                               ^ Don't block the rest of the execution.
-    //                                 Don't wait until the request finishes to 
-    //                                 continue.
+			oReq.open("get", "getCounts.php?q="+place.name,true);
 			oReq.send();
 			showWeather(place.geometry.location.lat(), place.geometry.location.lng());
 			comments();
 		    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
 					  'Temp: ' + '38' + '<br>' + 'Humidity: 65%' + '<br>' + 'Overview: Clear' + '</div>');
 		    infowindow.open(map, this);
+		    
 		});
             }
 	});
@@ -157,8 +156,31 @@ var oReq = new XMLHttpRequest(); //New request object
 oReq.onload = function() {
 	//This is where you handle what to do with the response.
 	//The actual data is found on this.responseText
-	hike_count = this.responseText; //Will alert: 42
+	climb_count = this.responseText; 
 };
+
+function showCounts(locationName) {
+    if (str == "") {
+        document.getElementById("climbing_count").innerHTML = "";
+        return;
+    } else {
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+				climing_count = this.responseText;
+                document.getElementById("climbing_count").innerHTML = climbing_count;
+            }
+        };
+        xmlhttp.open("GET","getCounts.php?q="+locationName,true);
+        xmlhttp.send();
+    }
+}
     
 function checkBike(){
     var checkbox = document.getElementById('Biking');
