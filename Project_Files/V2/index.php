@@ -35,16 +35,16 @@
 
     <div id="subbar">
       <div class="activityDiv">
-        <button class="activityButton">Hiking</button>
+        <button class="activityButton" onclick="loadHikingIcons()">Hiking</button>
       </div>
       <div class="activityDiv">
-        <button class="activityButton">Biking</button>
+        <button class="activityButton" onclick="loadBikingIcons()">Biking</button>
       </div>
       <div class="activityDiv">
-        <button class="activityButton">Skiing</button>
+        <button class="activityButton" onclick="loadSkiingIcons()">Skiing</button>
       </div>
       <div class="activityDiv">
-        <button class="activityButton">Climbing</button>
+        <button class="activityButton" onclick="loadClimbingIcons()">Climbing</button>
       </div>
 
       <!-- Button triggers login modal -->

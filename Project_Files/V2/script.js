@@ -35,98 +35,112 @@ function initMap() {
     });
 
     var infowindow = new google.maps.InfoWindow();
-    var service = new google.maps.places.PlacesService(map);
-    // Climbing icons
+}
+
+function loadClimbingIcons() {
+  // Climbing icons
+  var service = new google.maps.places.PlacesService(map); 
     for (var i=0; i<climb_place.length; i++) {
-	service.getDetails({
+  service.getDetails({
             placeId: climb_place[i]
-	}, function(place, status) {
+  }, function(place, status) {
             if (status === google.maps.places.PlacesServiceStatus.OK) {
-		var marker = new google.maps.Marker({
-		    map: map,
-		    position: place.geometry.location,
-		    icon: "Images/climb.png"
-		});
-		marker_climb.push(marker);
-		google.maps.event.addListener(marker, 'click', function() {
-			document.getElementById('location_name').innerHTML = place.name;
-			showWeather(place.geometry.location.lat(), place.geometry.location.lng());
+    var marker = new google.maps.Marker({
+        map: map,
+        position: place.geometry.location,
+        icon: "Images/climb.png"
+    });
+    marker_climb.push(marker);
+    google.maps.event.addListener(marker, 'click', function() {
+      document.getElementById('location_name').innerHTML = place.name;
+      showWeather(place.geometry.location.lat(), place.geometry.location.lng());
                         comments();
-		    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
-					  'Temp: ' + '38' + '<br>' + 'Humidity: 65%' + '<br>' + 'Overview: Clear' + '</div>');
-		    infowindow.open(map, this);
-		});
+        infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
+            'Temp: ' + '38' + '<br>' + 'Humidity: 65%' + '<br>' + 'Overview: Clear' + '</div>');
+        infowindow.open(map, this);
+    });
             }
-	});
+  });
     }
-    // biking icons
+}
+
+
+function loadBikingIcons() {
+  // biking icons
+  var service = new google.maps.places.PlacesService(map); 
     for (var i=0; i<bike_place.length; i++) {
-	service.getDetails({
+  service.getDetails({
             placeId: bike_place[i]
-	}, function(place, status) {
+  }, function(place, status) {
             if (status === google.maps.places.PlacesServiceStatus.OK) {
-		var marker = new google.maps.Marker({
-		    map: map,
-		    position: place.geometry.location,
-		    icon: "Images/cycling.png"
-		});
-		marker_bike.push(marker);
-		google.maps.event.addListener(marker, 'click', function() {
-			document.getElementById('location_name').innerHTML = place.name;
-			showWeather(place.geometry.location.lat(), place.geometry.location.lng());
+    var marker = new google.maps.Marker({
+        map: map,
+        position: place.geometry.location,
+        icon: "Images/cycling.png"
+    });
+    marker_bike.push(marker);
+    google.maps.event.addListener(marker, 'click', function() {
+      document.getElementById('location_name').innerHTML = place.name;
+      showWeather(place.geometry.location.lat(), place.geometry.location.lng());
                         comments();
-		    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
-					  'Temp: ' + '38' + '<br>' + 'Humidity: 65%' + '<br>' + 'Overview: Clear' + '</div>');
-		    infowindow.open(map, this);
-		});
+        infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
+            'Temp: ' + '38' + '<br>' + 'Humidity: 65%' + '<br>' + 'Overview: Clear' + '</div>');
+        infowindow.open(map, this);
+    });
             }
-	});
-    }
-    // skiing icons
+  });
+    } 
+}
+function loadSkiingIcons() {
+  // skiing icons
+  var service = new google.maps.places.PlacesService(map); 
     for (var i=0; i<ski_place.length; i++) {
-	service.getDetails({
+  service.getDetails({
             placeId: ski_place[i]
-	}, function(place, status) {
+  }, function(place, status) {
             if (status === google.maps.places.PlacesServiceStatus.OK) {
-		var marker = new google.maps.Marker({
-		    map: map,
-		    position: place.geometry.location,
-		    icon: "Images/skiing.png"
-		});
-		marker_ski.push(marker);
-		google.maps.event.addListener(marker, 'click', function() {
-			document.getElementById('location_name').innerHTML = place.name;
-			showWeather(place.geometry.location.lat(), place.geometry.location.lng());
+    var marker = new google.maps.Marker({
+        map: map,
+        position: place.geometry.location,
+        icon: "Images/skiing.png"
+    });
+    marker_ski.push(marker);
+    google.maps.event.addListener(marker, 'click', function() {
+      document.getElementById('location_name').innerHTML = place.name;
+      showWeather(place.geometry.location.lat(), place.geometry.location.lng());
                         comments();
-		    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
-					  'Temp: ' + '38' + '<br>' + 'Humidity: 65%' + '<br>' + 'Overview: Clear' + '</div>');
-		    infowindow.open(map, this);
-		});
+        infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
+            'Temp: ' + '38' + '<br>' + 'Humidity: 65%' + '<br>' + 'Overview: Clear' + '</div>');
+        infowindow.open(map, this);
+    });
             }
-	});
+  });
     }
-    // hiking icons
+}
+function loadHikingIcons() {
+  // hiking icons
+  var service = new google.maps.places.PlacesService(map); 
     for (var i=0; i<hike_place.length; i++) {
-	service.getDetails({
+  service.getDetails({
             placeId: hike_place[i]
-	}, function(place, status) {
+  }, function(place, status) {
             if (status === google.maps.places.PlacesServiceStatus.OK) {
-		var marker = new google.maps.Marker({
-		    map: map,
-		    position: place.geometry.location,
-		    icon: "Images/hiking.png"
-		});
-		marker_hike.push(marker);
-		google.maps.event.addListener(marker, 'click', function() {
-			document.getElementById('location_name').innerHTML = place.name;
-			showWeather(place.geometry.location.lat(), place.geometry.location.lng());
-			comments();
-		    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
-					  'Temp: ' + '38' + '<br>' + 'Humidity: 65%' + '<br>' + 'Overview: Clear' + '</div>');
-		    infowindow.open(map, this);
-		});
+    var marker = new google.maps.Marker({
+        map: map,
+        position: place.geometry.location,
+        icon: "Images/hiking.png"
+    });
+    marker_hike.push(marker);
+    google.maps.event.addListener(marker, 'click', function() {
+      document.getElementById('location_name').innerHTML = place.name;
+      showWeather(place.geometry.location.lat(), place.geometry.location.lng());
+      comments();
+        infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
+            'Temp: ' + '38' + '<br>' + 'Humidity: 65%' + '<br>' + 'Overview: Clear' + '</div>');
+        infowindow.open(map, this);
+    });
             }
-	});
+  });
     }
 }
 
@@ -199,7 +213,7 @@ var object;
 
  function displayWeather(object) {
  	document.getElementById('results_S').innerHTML = object.currently.summary;
- 	document.getElementById('results_H').innerHTML = "Humidity: " + object.currently.humidity*100 + "%";
+ 	document.getElementById('results_H').innerHTML = "Humidity: " + object.currently.humidity.toFixed(2)*100 + "%";
  	document.getElementById('results_T').innerHTML = object.currently.temperature + "\xb0";
  	document.getElementById('results_WS').innerHTML = "Wind Speed: " + object.currently.windSpeed + " MPH";
  	document.getElementById('results_WD').innerHTML = "Wind Direction: " + object.currently.windBearing + "\xb0";
