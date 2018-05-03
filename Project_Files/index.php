@@ -134,12 +134,36 @@
 
       <div id="commentSectionDiv">
         <h2 id="commentTitle">Comments</h2>
-
+        
+        <form method="post" action="index.php" id="displaycomments">
+                <?php include('getComments.php'); ?>
+                <input type="hidden" id="location" name="location" value="document.getElementById('location_name').textContent"></input>
+                <div class="input-group" style="text-align: center">
+                        <a name="showComments" onclick="document.getElementById('location').value = document.getElementById('location_name').textContent; $(#'displaycomments').submit();" href="#commentTitle">Display Comments</a>
+                </div>
+        </form>
+        <div id="com" style="text-align: center">
+                <p>
+                
+                    <?php 
+                        //echo $_SESSION['location'];
+                        
+                        if($_SESSION['loc_com_num'] != -1){
+                                for($i=0; $i<$_SESSION['loc_com_num']; $i++){
+                                        echo $_SESSION['loc_users'][$i]." (".$_SESSION['loc_dates'][$i].") - ".$_SESSION['loc_comments'][$i]."<br>";
+                                }
+                        }else{
+                                echo $_SESSION['loc_comments'][0];
+                        }
+                    ?>
+               </p>
+        </div>
+        
         <!-- Button triggers comment modal -->
         <div id="commentBtnDiv">
           <button id="commentBtn">Add a Comment</button>
         </div>
-
+        </div>
         <!-- This div holds the comment modal -->
         <div id="commentModal" class="modal">
           <div class="modal-content">
@@ -150,7 +174,7 @@
             <div class="everythingButTheHeader">
               <form method="post" action="index.php">
                 <?php include('UserComment.php'); ?>
-                <input type="hidden" id="location" name="location"></input>
+                <input type="hidden" id="location2" name="location2" value="document.getElementById('location_name').textContent"></input>
                 <label>What did you do there?</label>
                 <div class="input-group">
                   Hiking <input type="checkbox" name="activities[]" id="activities" value="hiking">
@@ -161,11 +185,10 @@
                 <div class="input-group"><textarea placeholder="Write your comment here" cols="40" rows="5" name="comment"></textarea></div>
                 <label>When were you there?</label>
                 <div class="input-group"><input type="date" name="date"</button></div>
-                <div class="input-group"><button type="submit" class="btn" name="submitComment">Submit Comment</button></div>
+                <div class="input-group"><button type="submit" onclick="document.getElementById('location2').value = document.getElementById('location_name').textContent; return false;" class="btn" name="submitComment">Submit Comment</button></div>
               </form>
             </div>
           </div>
-      </div>
     </div>
     </div>
     <script type="text/javascript" src='ModalScript.js'></script>
