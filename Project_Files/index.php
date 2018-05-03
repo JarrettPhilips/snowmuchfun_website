@@ -48,15 +48,7 @@
       </div>
 
       <!-- Button triggers login modal -->
-      <div id="usernameDiv">
-        <h4 id="usernameHeader">
-          <?php
-            if(isset($_SESSION['username'])){
-                echo $_SESSION['username'];
-              }
-          ?>
-        </h4>
-      </div>
+      
       <div class="activityDiv" id="loginDiv">
           <button class="activityButton" id="loginBtn">User Portal</button>
       </div>
@@ -93,6 +85,17 @@
             </div>
           </div>
         </div>
+
+        <div id="usernameDiv">
+        <h4 id="usernameHeader">
+          <?php
+            if(isset($_SESSION['username'])){
+                echo $_SESSION['username'];
+              }
+          ?>
+        </h4>
+      </div>
+      
     </div>
   </div>
 
@@ -147,7 +150,7 @@
             <div class="everythingButTheHeader">
               <form method="post" action="index.php">
                 <?php include('UserComment.php'); ?>
-                <input type="hidden" id="location" name="location">hey</input>
+                <input type="hidden" id="location" name="location"></input>
                 <label>What did you do there?</label>
                 <div class="input-group">
                   Hiking <input type="checkbox" name="activities[]" id="activities" value="hiking">
