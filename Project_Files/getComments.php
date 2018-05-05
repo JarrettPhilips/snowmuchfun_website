@@ -29,6 +29,6 @@ $num=0;
         $_SESSION['loc_dates'] = $dates;
         $_SESSION['loc_com_num'] = $num;
         $_SESSION['location']=$location;
-        header('location: index.php');
+        //header('location: index.php');
 //}
 ?>

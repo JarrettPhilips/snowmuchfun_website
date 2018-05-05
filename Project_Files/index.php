@@ -14,6 +14,7 @@
 <head>
   <link rel="stylesheet" href="style.css">
   <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js'></script>
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
   <script type='text/javascript' src='script.js'></script>
   <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat|Oxygen|Raleway|Work+Sans:100" rel="stylesheet">
 
@@ -139,7 +140,7 @@
                 <?php include('getComments.php'); ?>
                 <input type="hidden" id="location" name="location" value="document.getElementById('location_name').textContent"></input>
                 <div class="input-group" style="text-align: center">
-                        <a name="showComments" onclick="document.getElementById('location').value = document.getElementById('location_name').textContent; $(#'displaycomments').submit();" href="#commentTitle">Display Comments</a>
+                        <a name="showComments" onclick="document.getElementById('location').value = document.getElementById('location_name').textContent; $('#displaycomments').submit();" href="#commentTitle">Display Comments</a>
                 </div>
         </form>
         <div id="com" style="text-align: center">
@@ -174,7 +175,7 @@
             <div class="everythingButTheHeader">
               <form method="post" action="index.php">
                 <?php include('UserComment.php'); ?>
-                <input type="hidden" id="location2" name="location2" value="document.getElementById('location_name').textContent"></input>
+                <input type="hidden" id="location2" name="location2"></input>
                 <label>What did you do there?</label>
                 <div class="input-group">
                   Hiking <input type="checkbox" name="activities[]" id="activities" value="hiking">
@@ -185,7 +186,7 @@
                 <div class="input-group"><textarea placeholder="Write your comment here" cols="40" rows="5" name="comment"></textarea></div>
                 <label>When were you there?</label>
                 <div class="input-group"><input type="date" name="date"</button></div>
-                <div class="input-group"><button type="submit" onclick="document.getElementById('location2').value = document.getElementById('location_name').textContent; return false;" class="btn" name="submitComment">Submit Comment</button></div>
+                <div class="input-group"><button type="submit" onclick="document.getElementById('location2').value = document.getElementById('location_name').textContent;" class="btn" name="submitComment">Submit Comment</button></div>
               </form>
             </div>
           </div>
