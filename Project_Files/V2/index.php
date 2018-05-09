@@ -1,3 +1,8 @@
+/* this is the main page for the website
+    everything stems from here and it runs
+    script.js to display map and weather data
+*/
+
 <?php
   session_start();
   if (!isset($_SESSION['username'])) {
