@@ -13,6 +13,7 @@ function runModal(btn, span, modal){
   //Opens modal on button click
   btn.onclick = function(){
     document.getElementById('location').value = document.getElementById('location_name').textContent;
+    document.getElementById('addcomment').innerHTML = document.getElementById('location_name').textContent;
     modal.style.display = "block";
   }
   //Closes modal on button click

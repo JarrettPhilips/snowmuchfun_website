@@ -159,7 +159,7 @@
           <div class="modal-content">
             <span id="commentClose" class="close">&times;</span>
 
-            <div class="header"><h1>Location</h1></div>
+            <div class="header"><h1 id="addcomment">Location</h1></div>
 
             <div class="everythingButTheHeader">
               <form method="post" action="index.php">
