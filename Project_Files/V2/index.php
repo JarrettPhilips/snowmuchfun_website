@@ -1,8 +1,3 @@
-/* this is the main page for the website
-    everything stems from here and it runs
-    script.js to display map and weather data
-*/
-
 <?php
   session_start();
   if (!isset($_SESSION['username'])) {
@@ -127,6 +122,29 @@
 
       <div id="commentSectionDiv">
         <h2 id="commentTitle">Comments</h2>
+        <form method="post" action="index.php" id="displaycomments">
+                <?php include('getComments.php'); ?>
+                <input type="hidden" id="location" name="location" value="document.getElementById('location_name').textContent"></input>
+                <div class="input-group" style="text-align: center">
+                        <a name="showComments" onclick="document.getElementById('location').value = document.getElementById('location_name').textContent; $('#displaycomments').submit();" href="#commentTitle">Display Comments</a>
+                </div>
+        </form>
+        <div id="com" style="text-align: center">
+                <p>
+                
+                    <?php 
+                        //echo $_SESSION['location'];
+                        
+                        if($_SESSION['loc_com_num'] != -1){
+                                for($i=0; $i<$_SESSION['loc_com_num']; $i++){
+                                        echo $_SESSION['loc_users'][$i]." (".$_SESSION['loc_dates'][$i].") - ".$_SESSION['loc_comments'][$i]."<br>";
+                                }
+                        }else{
+                                echo $_SESSION['loc_comments'][0];
+                        }
+                    ?>
+               </p>
+        </div>
 
         <!-- Button triggers comment modal -->
         <div id="commentBtnDiv">
@@ -142,6 +160,7 @@
 
             <div class="everythingButTheHeader">
               <form method="post" action="index.php">
+                <?php include('UserComment.php'); ?>
                 <label>What did you do there?</label>
                 <div class="input-group">
                   Hiking <input type="checkbox" name="activities[]" id="activities" value="hiking">
