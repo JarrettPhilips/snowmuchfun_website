@@ -36,20 +36,19 @@
 
     <div id="subbar">
       <div class="activityDiv">
-        <button class="activityButton" onclick="loadHikingIcons()">Hiking</button>
+        <button id="hike_button" class="activityButton" onclick="loadHikingIcons()">Hiking</button>
       </div>
       <div class="activityDiv">
-        <button class="activityButton" onclick="loadBikingIcons()">Biking</button>
+        <button id="bike_button" class="activityButton" onclick="loadBikingIcons()">Biking</button>
       </div>
       <div class="activityDiv">
-        <button class="activityButton" onclick="loadSkiingIcons()">Skiing</button>
+        <button id="ski_button" class="activityButton" onclick="loadSkiingIcons()">Skiing</button>
       </div>
       <div class="activityDiv">
-        <button class="activityButton" onclick="loadClimbingIcons()">Climbing</button>
+        <button id="climb_button" class="activityButton" onclick="loadClimbingIcons()">Climbing</button>
       </div>
 
       <!-- Button triggers login modal -->
-      
       <div class="activityDiv" id="loginDiv">
           <button class="activityButton" id="loginBtn">User Portal</button>
       </div>
@@ -86,17 +85,6 @@
             </div>
           </div>
         </div>
-
-        <div id="usernameDiv">
-        <h4 id="usernameHeader">
-          <?php
-            if(isset($_SESSION['username'])){
-                echo $_SESSION['username'];
-              }
-          ?>
-        </h4>
-      </div>
-      
     </div>
   </div>
 
@@ -135,7 +123,6 @@
 
       <div id="commentSectionDiv">
         <h2 id="commentTitle">Comments</h2>
-        
         <form method="post" action="index.php" id="displaycomments">
                 <?php include('getComments.php'); ?>
                 <input type="hidden" id="location" name="location" value="document.getElementById('location_name').textContent"></input>
@@ -147,7 +134,7 @@
                 <p>
                 
                     <?php 
-                        //echo $_SESSION['location'];
+                        echo "<b>".$_SESSION['location']."</b>"."<br>";
                         
                         if($_SESSION['loc_com_num'] != -1){
                                 for($i=0; $i<$_SESSION['loc_com_num']; $i++){
@@ -159,12 +146,12 @@
                     ?>
                </p>
         </div>
-        
+
         <!-- Button triggers comment modal -->
         <div id="commentBtnDiv">
           <button id="commentBtn">Add a Comment</button>
         </div>
-        </div>
+
         <!-- This div holds the comment modal -->
         <div id="commentModal" class="modal">
           <div class="modal-content">
@@ -175,7 +162,6 @@
             <div class="everythingButTheHeader">
               <form method="post" action="index.php">
                 <?php include('UserComment.php'); ?>
-                <input type="hidden" id="location2" name="location2"></input>
                 <label>What did you do there?</label>
                 <div class="input-group">
                   Hiking <input type="checkbox" name="activities[]" id="activities" value="hiking">
@@ -183,13 +169,15 @@
                   Skiing <input type="checkbox" name="activities[]" id="activities" value="skiing">
                   Climbing <input type="checkbox" name="activities[]" id="activities" value="climbing">
                 </div>
+
                 <div class="input-group"><textarea placeholder="Write your comment here" cols="40" rows="5" name="comment"></textarea></div>
                 <label>When were you there?</label>
                 <div class="input-group"><input type="date" name="date"</button></div>
-                <div class="input-group"><button type="submit" onclick="document.getElementById('location2').value = document.getElementById('location_name').textContent;" class="btn" name="submitComment">Submit Comment</button></div>
+                <div class="input-group"><button type="submit" class="btn" name="submitComment">Submit Comment</button></div>
               </form>
             </div>
           </div>
+      </div>
     </div>
     </div>
     <script type="text/javascript" src='ModalScript.js'></script>

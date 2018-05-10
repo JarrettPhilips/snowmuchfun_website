@@ -1,221 +1,187 @@
-/*NAME:
-   style.css
-
-  PURPOSE:
-    Define styling for main map webpage
-
-  MODIFICATION HISTORY:
-    2018/03/9: Matthew Chamot	Initial creation
-    2018/03/12: Colin Chen Added styling */
-
-
-html {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+/*
+    Variables and Root Variables
+*/
+:root {
+    --primary-color: #f5f6fa;
+    --secondary-color: #2f3640;
+    --tertiary-color: #576882;
 }
 
-body {
-    height: 100%;
-    margin: 20;
-    padding: 0;
-    background-image:Images/Background.jpg;
-}
-
-table, th, td, tr {
-    border: 0px;
-    padding: 0px;
+*{
+    box-sizing: border-box;
     margin: 0px;
 }
 
-label {
-    color: #d6f8fa;
-    font-size: 20px;
-    font-family: arial;
+
+/*
+  Banner
+*/
+
+/*
+  Weather
+*/
+
+
+#weatherSectionDiv {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  font-family: 'Work Sans', sans-serif;
 }
 
-form {
-    display: inline-block;
-    text-align: left;
-    margin-left: 10px;
+#commentSectionDiv {
+  font-family: 'Work Sans', sans-serif;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
 }
 
-input[type=checkbox]:hover {
-    box-shadow:0px 0px 10px #1300ff;
+#locationTitleDiv {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
 }
 
-input[type="submit"]{
-    /* change these properties to whatever you want */
-    background-color: #555;
-    color: #fff;
-    border-radius: 10px;
+#location_name {
+  text-align: center;
+  font-size: 24px;
+  font-family: 'Work Sans', sans-serif;
 }
 
-#webtitle {
-    width: 400px;
+#results_T {
+  text-align: center;
+  font-size: 60px;
+  background-color: var(--secondary-color)
+  color: var(--primary-color)
 }
 
-#snowflake {
+#results_S {
+  font-size: 16px;
+  text-align: center;
+}
+
+.weatherInfoDiv {
+  font-size: 10px;
+  text-align: center;
+}
+
+.weatherInfo {
 
 }
 
- /* The sidebar menu */
-.sidenav {
-    height: 100%; /* Full-height: remove this if you want "auto" height */
-    width: 208px; /* Set the width of the sidebar */
-    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-    z-index: 1; /* Stay on top */
-    /*top: 0; /* Stay at the top */
-    left: 0;
-    background-color: #6d6b9e; /*Dark Blue*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 20px;
+/*
+  Comments
+*/
+#commentTitle {
+  text-align: center;
+  font-size: 24px;
 }
 
-/* The navigation menu links */
-.sidenav a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #d6f8fa;/* light blue #d6f8fa*/
-    display: block;
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-    color: #a9b6f3;
-}
-
-
- /* The sidebar menu */
-.sidenav_right {
-    height: 100%; /* Full-height: remove this if you want "auto" height */
-    width: 268px; /* Set the width of the sidebar */
-    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-    z-index: 1; /* Stay on top */
-    /*top: 0; /* Stay at the top */
-    right: 0;
-    background-color: #6d6b9e; /*Dark Blue*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    overflow-y: auto;
-    padding-top: 20px;
-}
-
-/* The navigation menu links */
-.sidenav_right a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #d6f8fa;/* light blue #d6f8fa*/
-    display: block;
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidenav_right a:hover {
-    color: #a9b6f3;
-}
-* {
-    box-sizing: border-box;
-}
- /* Three image containers (use 25% for four, and 50% for two, etc) */
-.column {
-  float: left;
-  width: 25%;
-  padding: 10px;
-}
-
-/* Clear floats after image containers */
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-} 
- /* The comments section menu */
-.comments {
-    width: 248px; /* Set the width of the sidebar */
-    position: static; /* goes up and down with scroll */
-    right: .1;
-    background-color: #adaaf5; /*Dark Blue*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    overflow-y: auto;
-    padding-top: 2px;
-}
-
-
-#map {
-    height: 100%;
-    margin-left: 200px;
-    margin-right: 260px;
-}
-
-/* Style page content */
-.main {
-    margin-left: 200px; /* Same as the width of the left sidebar */
-    margin-right: 260px; /* same as right sidebar width */
-    padding: 0px 10px;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-}
-
-.button {
-    background-color: #817ecd; /* Blue #05b1e9*/
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    font-family: arial;
-}
-
-.btn-success {
-    color: #d6f8fa;
-    background-color: #6d6b9e;
-    border-width: 2px;
-    border-color: #6d6b9e;
-    margin-right: 5px;
-}
-
-.btn-success:hover {
-    background-color: #a9b6f3;
-    color: white;
-    border-color: #a9b6f3;
-}
-
-.error {
-  width: 92%;
-  margin: 0px auto;
-  padding: 10px;
-  border: 1px solid #a94442;
-  color: #a94442;
-  background: #f2dede;
+#commentBtn {
+  padding: 5px;
+  font-size: 12px;
+  color: var(--primary-color);
+  background: var(--secondary-color);
+  border: none;
   border-radius: 5px;
-  text-align: left;
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%
 }
 
-#index, #weather, #activity {
-    background-color: #b5d3e7;
+/*
+    Other
+*/
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    /*overflow: hidden;*/
 }
 
-#side_icon {
-    width:20%;height:20%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+body {
+    margin: 0px;
+    background-color: var(--secondary-color);
 }
 
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.activityDiv {
+    float: left;
+}
+
+.activityButton {
+    padding: 10px;
+    font-size: 15px;
+    border: none;
+}
+
+.bannerImage{
+    width: 100%;
+    height:200px;
+    margin: 0px;
+}
+
+#loginModal-content {
+  /*width: 16%;*/
+}
+
+#title {
+    position: absolute;
+    font-size: 100px;
+    top: 26%;
+    left: 32%;
+    letter-spacing: 15px;
+}
+
+#titleDiv {
+    font-family: 'Work Sans', sans-serif;
+    color: var(--primary-color);
+    width: 100%;
+    margin-bottom: -5px;
+    position: relative;
+    text-align: center;
+}
+
+#subbar {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: solid 0px black;
+    display: inline-block;
+    width: 100%;
+    opacity: 10%;
+    margin-bottom: -3px;
+}
+
+#sidebar {
+    background-color: var(--primary-color);
+    float: left;
+    height: 100vh;
+    width: 20%;
+}
+
+#loginDiv{
+  float: right;
+}
+
+#contentDiv {
+  height: 100%;
+  width: 100%;
+  background-color: var(--primary-color);
+}
+
+/*
+  Modal CSS
+*/
 textarea {
   width: 95%;
 }
+
 .header {
   width: 100%;
   color: white;
-  font-family:'Roboto';
+  font-family: 'Work Sans', sans-serif;
   background: #2f3640;
   text-align: center;
   border-bottom: none;
@@ -281,4 +247,15 @@ textarea {
     color: white;
     text-decoration: none;
     cursor: pointer;
+}
+
+/*
+  Google Maps CSS
+*/
+#mapDiv {
+  height: 100%;
+  width: 80%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--primary-color);
 }

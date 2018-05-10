@@ -1,4 +1,6 @@
 <?php
+error_reporting(0);
+ini_set('display_errors', 0);
 //session_start();
 
 $username = "";
@@ -32,14 +34,15 @@ if(isset($_POST['registerUser'])){
 
   //If no errors, insert info into users table
   if(count($errors) == 0){
-  	//Eventually we can encrypt passwords here
+    //Eventually we can encrypt passwords here
 
-  	$query = "INSERT INTO Users (Username, Password, Location) VALUES ('$username', '$password1', '$location')";
-  	mysqli_query($db, $query);
-
-    $_SESSION['username'] = $username;
-  	$_SESSION['success'] = "Successfully logged in";
-  	header('location: index.php');
+    $query = "INSERT INTO Users (Username, Password, Location) VALUES ('$username', '$password1', '$location')";
+    mysqli_query($db, $query);
+    header('location: index.php');
+        session_start();
+        $_SESSION['username'] = $username;
+        //$_SESSION['username'] = $username;
+    //header('location: index.php');
   }
 }
 
@@ -58,17 +61,18 @@ if(isset($_POST['loginUser'])){
   if(count($errors) == 0){
     //This is where you re-hash the password to check
 
-  	$query = "SELECT * FROM Users WHERE Username='$username' AND Password='$password'";
-  	$results = mysqli_query($db, $query);
+    $query = "SELECT * FROM Users WHERE Username='$username' AND Password='$password'";
+    $results = mysqli_query($db, $query);
 
     //Checks credentials
     if(mysqli_num_rows($results) == 1){
-  	  $_SESSION['username'] = $username;
-  	  $_SESSION['success'] = "Successfully logged in";
+      $_SESSION['username'] = $username;
+      $_SESSION['success'] = "Successfully logged in";
       header('refresh: 0');
+      header('location: index.php');
       //header('location: index.php');
-  	} else {
-  		array_push($errors, "Incorrect credentials");
-  	}
+    } else {
+      array_push($errors, "Incorrect credentials");
+    }
   }
 } ?>
