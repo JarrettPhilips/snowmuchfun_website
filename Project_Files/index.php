@@ -47,7 +47,7 @@
       <div class="activityDiv">
         <button id="climb_button" class="activityButton" onclick="loadClimbingIcons()">Climbing</button>
       </div>
-
+      
       <!-- Button triggers login modal -->
       <div class="activityDiv" id="loginDiv">
           <button class="activityButton" id="loginBtn">User Portal</button>
@@ -85,6 +85,11 @@
             </div>
           </div>
         </div>
+        <?php
+              if(isset($_SESSION['username'])){
+                      echo "<div class='activityButton' align='right' padding-right='100px'><p>Welcome, ".$_SESSION['username']."&nbsp</p></div>";
+              }
+         ?>
     </div>
   </div>
 
