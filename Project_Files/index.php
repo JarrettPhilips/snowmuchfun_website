@@ -134,8 +134,10 @@
                 <p>
                 
                     <?php 
-                        echo "<b>".$_SESSION['location']."</b>"."<br>";
-                        
+                        if($_SESSION['location'] !="")
+                        {
+                                echo "<b>".$_SESSION['location']."</b>"."<br>";
+                        }
                         if($_SESSION['loc_com_num'] != -1){
                                 for($i=0; $i<$_SESSION['loc_com_num']; $i++){
                                         echo $_SESSION['loc_users'][$i]." (".$_SESSION['loc_dates'][$i].") - ".$_SESSION['loc_comments'][$i]."<br>";
@@ -162,6 +164,7 @@
             <div class="everythingButTheHeader">
               <form method="post" action="index.php">
                 <?php include('UserComment.php'); ?>
+                <input type="hidden" id="location2" name="location2"></input>
                 <label>What did you do there?</label>
                 <div class="input-group">
                   Hiking <input type="checkbox" name="activities[]" id="activities" value="hiking">
@@ -173,7 +176,7 @@
                 <div class="input-group"><textarea placeholder="Write your comment here" cols="40" rows="5" name="comment"></textarea></div>
                 <label>When were you there?</label>
                 <div class="input-group"><input type="date" name="date"</button></div>
-                <div class="input-group"><button type="submit" class="btn" name="submitComment">Submit Comment</button></div>
+                <div class="input-group"><button type="submit" onclick="document.getElementById('location2').value = document.getElementById('location_name').textContent;" class="btn" name="submitComment">Submit Comment</button></div>
               </form>
             </div>
           </div>
