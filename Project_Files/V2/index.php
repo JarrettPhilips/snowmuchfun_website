@@ -14,6 +14,7 @@
 <head>
   <link rel="stylesheet" href="style.css">
   <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js'></script>
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
   <script type='text/javascript' src='script.js'></script>
   <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat|Oxygen|Raleway|Work+Sans:100" rel="stylesheet">
 
