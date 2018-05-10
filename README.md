@@ -10,4 +10,4 @@ This website is live [here.](http://snowmuchfun.sportsontheweb.net/) The site ca
 Please use the issues tab to contribute code and help build the project. 
 
 ### Version
-There was a signifigant rewrite of the site on May 1st. To view the old version, you can visit commit [105](https://github.com/JarrettPhilips/SoftwareDevGroupProject/tree/6cd0360b96968b8fb0b492ed4a14ed25892ae271)
+There was a signifigant rewrite of the site on May 1st. To view the old version, you can visit commit [105.](https://github.com/JarrettPhilips/SoftwareDevGroupProject/tree/6cd0360b96968b8fb0b492ed4a14ed25892ae271)
