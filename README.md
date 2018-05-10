@@ -3,6 +3,9 @@
 ### Abstract
 Snow Much Fun is a social weather site, where data from all over Colorado is collected and displayed. Here users can view and comment on different locations to share more detailed updates on conditions, crowds, activites and more. 
 
+### Organization
+All essential project files are in the project files folder.  Inside there is a seperate folder for images, otherwise most files are in the top level of the folder.  Meeting Notes and Milestones have a seperate folder.
+
 ### Running
 This website is live [here.](http://snowmuchfun.sportsontheweb.net/) The site can also be run locally. To do this you need to create a new database (our host prevents any external communication), and then simply run a PHP server, then launch index.php.
 
