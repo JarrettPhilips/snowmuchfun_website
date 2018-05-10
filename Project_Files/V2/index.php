@@ -134,7 +134,7 @@
                 <p>
                 
                     <?php 
-                        //echo $_SESSION['location'];
+                        echo "<b>".$_SESSION['location']."</b>"."<br>";
                         
                         if($_SESSION['loc_com_num'] != -1){
                                 for($i=0; $i<$_SESSION['loc_com_num']; $i++){
